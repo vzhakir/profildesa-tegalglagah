@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css'; // Kita akan buat file CSS ini
 
 // Import gambar dari folder assets
-import HeroBackground from '../assets/dummy.jpg';
-import IconPertanian from '../assets/shallot.svg';
-import IconPariwisata from '../assets/travel.svg';
+import HeroBackground from '../assets/herobg.jpg';
+import IconPertanian from '../assets/shallots.svg';
+import IconPeternakan from '../assets/farm.svg';
 import IconKerajinan from '../assets/craft.svg';
 
 
@@ -44,17 +44,12 @@ function HomePage() {
           <div className={styles.potensiCard}>
             <img src={IconPertanian} alt="Pertanian" className={styles.potensiIcon} />
             <h3>Pertanian</h3>
-            <p>Lahan subur dengan komoditas utama padi, jagung, dan kelapa sawit.</p>
+            <p>Lahan subur dengan komoditas utama padi dan bawang merah.</p>
           </div>
           <div className={styles.potensiCard}>
-            <img src={IconPariwisata} alt="Pariwisata" className={styles.potensiIcon} />
-            <h3>Pariwisata</h3>
-            <p>Keindahan alam air terjun dan perbukitan yang menawan untuk dijelajahi.</p>
-          </div>
-          <div className={styles.potensiCard}>
-            <img src={IconKerajinan} alt="Kerajinan" className={styles.potensiIcon} />
-            <h3>Kerajinan Lokal</h3>
-            <p>Kerajinan tangan anyaman rotan dan tenun khas daerah dari para pengrajin lokal.</p>
+            <img src={IconPeternakan} alt="Peternakan" className={styles.potensiIcon} />
+            <h3>Peternakan</h3>
+            <p>Wilayah mendukung pengembangan ternak dengan komoditas utama kambing.</p>
           </div>
         </div>
       </section>

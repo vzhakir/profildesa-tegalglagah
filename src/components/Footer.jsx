@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 // Impor logo dari folder assets
-import logoDesa from '../assets/shallot.svg';
+import logoDesa from '../assets/shallots.svg';
 
 function Footer() {
   return (

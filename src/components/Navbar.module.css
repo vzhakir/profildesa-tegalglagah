@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px; /* Padding diubah menjadi nilai tetap */
+  padding: 0 40px; /* Padding kiri-kanan, padding atas-bawah akan diatur oleh link */
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -13,7 +13,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-sizing: border-box; /* Ditambahkan agar padding tidak menambah total lebar */
+  box-sizing: border-box;
 }
 
 /* --- Brand / Logo --- */
@@ -22,28 +22,39 @@
   font-weight: bold;
   color: #333;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .brand:hover {
   color: #4CAF50;
 }
 
-/* --- Container untuk Tautan Navigasi --- */
-.navLinks {
+/* --- Container Menu Utama (<ul>) --- */
+.navMenu {
   display: flex;
   gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-/* --- Gaya untuk setiap Tautan --- */
+/* --- Item Menu Utama (<li>) --- */
+.navItem {
+  position: relative; /* PENTING untuk posisi dropdown */
+  display: flex;
+  align-items: center;
+}
+
+/* --- Tautan Menu Utama (<NavLink>) --- */
 .navLink {
+  display: flex;
+  align-items: center;
   color: #555;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 5px 0;
+  padding: 25px 0; /* Padding atas-bawah untuk tinggi navbar */
   position: relative;
   transition: color 0.3s ease;
 }
@@ -52,26 +63,89 @@
   color: #4CAF50;
 }
 
-/* --- Gaya untuk Tautan yang Sedang Aktif --- */
+/* --- Panah Dropdown --- */
+.arrow {
+  font-size: 0.7em;
+  margin-left: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navItem:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* --- Gaya untuk Tautan Aktif --- */
 .active {
   color: #4CAF50;
   font-weight: 700;
 }
 
+/* Garis bawah untuk link aktif */
 .active::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 15px; /* Sesuaikan posisi garis */
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #4CAF50;
+  background-color: #E53935; /* Warna merah seperti di contoh gambar */
   border-radius: 2px;
 }
 
+/* --- Dropdown Menu (<ul>) --- */
+.dropdownMenu {
+  display: block; /* Gunakan opacity untuk transisi, bukan display */
+  position: absolute;
+  top: 90%; /* Posisi sedikit di bawah menu utama */
+  left: 50%;
+  transform: translateX(-50%); /* Pusatkan dropdown */
+  background-color: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 10px); /* Efek slide dari bawah */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Tampilkan dropdown saat navItem di-hover */
+.navItem:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* Item di dalam Dropdown (<li>) */
+.dropdownMenu li {
+  padding: 0;
+}
+
+/* Tautan di dalam Dropdown (<a>) */
+.dropdownMenu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap; /* Mencegah teks turun baris */
+}
+
+.dropdownMenu li a:hover {
+  background-color: #f5f5f5;
+  color: #E53935;
+}
+
+
 /* --- Aturan untuk Layar Kecil (Responsif) --- */
-@media (max-width: 768px) {
-  .navLinks {
-    display: none;
+@media (max-width: 992px) {
+  .navMenu {
+    display: none; /* Sembunyikan menu di mobile */
   }
+  /* Anda bisa menambahkan gaya untuk .menuIcon di sini jika ada */
 }
