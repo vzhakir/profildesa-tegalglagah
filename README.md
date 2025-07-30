@@ -1,12 +1,17 @@
-# React + Vite
+# Repositori Profil Desa Tegalglagah
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repository ini menjelaskan pengembangan dan implementasi sistem informasi desa untuk Desa Tegalglagah, yang bertujuan untuk mendukung digitalisasi layanan administrasi, pengelolaan data kependudukan, serta transparansi informasi publik.
 
-Currently, two official plugins are available:
+Isi dari repository ini mencakup:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Struktur data dan dokumentasi sistem informasi desa (SID)
 
-## Expanding the ESLint configuration
+- Kode sumber aplikasi pelayanan masyarakat berbasis web
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Panduan penggunaan untuk operator desa
+
+- Dataset wilayah dan demografi
+
+- Modul tambahan seperti manajemen UMKM, pengaduan warga, dan arsip surat menyurat
+
+Dengan adanya sistem ini, diharapkan pelayanan publik di Desa Tegalglagah dapat berjalan lebih cepat, transparan, dan mudah diakses oleh seluruh warga.
