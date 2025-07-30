@@ -1,0 +1,81 @@
+/* src/components/VisiMisiPage.module.css */
+
+.pageContainer {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.subheading {
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  border-left: 5px solid #E53935;
+  padding-left: 15px;
+}
+
+.visionStatement {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-left: 5px solid #ccc;
+}
+
+.missionList {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: mission-counter;
+}
+
+.missionList li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 45px;
+}
+
+.missionList li::before {
+  counter-increment: mission-counter;
+  content: counter(mission-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #E53935;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

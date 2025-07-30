@@ -1,12 +1,12 @@
 // src/App.jsx
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Anggap kita sudah membuat Navbar
+import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import KondisiDesaPage from './components/KondisiDesaPage';
 import Footer from './components/Footer';
-import SejarahPage from './pages/profil/SejarahPage'; // Contoh halaman baru
-import VisiMisiPage from './pages/profil/VisiMisiPage'; // Contoh halaman baru
+import SejarahPage from './components/SejarahPage';
+import VisiMisiPage from './components/VisiMisiPage';
 
 function App() {
   return (
