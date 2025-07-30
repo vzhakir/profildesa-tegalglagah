@@ -23,6 +23,16 @@
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
+  
+  /* Gaya untuk mensejajarkan logo dan teks */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara logo dan teks */
+}
+
+/* Gaya untuk logo di dalam brand */
+.logo {
+  height: 35px; /* Anda bisa sesuaikan ukurannya */
 }
 
 .brand:hover {

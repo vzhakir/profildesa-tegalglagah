@@ -1,7 +1,6 @@
-// src/components/Navbar.jsx
-
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import logoDesa from '../assets/logobrebes.svg';
 
 function Navbar() {
   const getLinkClass = ({ isActive }) =>
@@ -10,16 +9,16 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.brand}>
-        Desa Tegalglagah
+        <img src={logoDesa} alt="Logo Desa Tegalglagah" className={styles.logo} />
+        <span>Desa Tegalglagah</span>
       </Link>
       
-      {/* Ubah div menjadi ul */}
       <ul className={styles.navMenu}>
+        {/* ... sisa item menu tidak berubah ... */}
         <li className={styles.navItem}>
           <NavLink to="/" className={getLinkClass}>Home</NavLink>
         </li>
 
-        {/* Contoh item dengan dropdown */}
         <li className={styles.navItem}>
           <NavLink to="/profil" className={getLinkClass}>
             Profil <span className={styles.arrow}>▼</span>
@@ -31,7 +30,6 @@ function Navbar() {
           </ul>
         </li>
 
-        {/* Contoh item dengan dropdown lain */}
         <li className={styles.navItem}>
            <NavLink to="/kondisi-desa" className={getLinkClass}>
             Kondisi Desa <span className={styles.arrow}>▼</span>
@@ -43,7 +41,6 @@ function Navbar() {
           </ul>
         </li>
 
-        {/* Item tanpa dropdown */}
         <li className={styles.navItem}>
            <NavLink to="/masalah-dan-potensi" className={getLinkClass}>Masalah dan Potensi</NavLink>
         </li>

@@ -1,8 +1,17 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen (navbar, main, footer) secara vertikal */
+  min-height: 100vh;      /* Paksa tinggi minimal container setinggi layar */
+}
+
+.mainContent {
+  flex-grow: 1;           /* Buat area konten ini meregang untuk mengisi sisa ruang */
 }
 
 .logo {

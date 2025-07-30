@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 // Impor logo dari folder assets
-import logoDesa from '../assets/shallots.svg';
+import logoDesa from '../assets/logobrebes.svg';
 
 function Footer() {
   return (
@@ -21,7 +21,7 @@ function Footer() {
           <p>Kabupaten Brebes</p>
           <p>Provinsi Jawa Tengah</p>
           <div className={styles.socialIcons}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://facebook.com/dahamkumala" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
