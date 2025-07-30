@@ -6,11 +6,17 @@ export const kondisiDesa = {
     wanita: 1255,
   },
   wilayah: {
-    luas: "1.250 Ha",
-    batasUtara: "Lorem Ipsum",
-    batasSelatan: "Lorem Ipsum",
-    batasBarat: "Lorem Ipsum",
-    batasTimur: "Lorem Ipsum",
+    luas: "748,65 Ha",
+    batasUtara: ["Petunjungan, Bulakamba", "Dukuhwringin, Slawi"],
+    batasSelatan: ["Sitanggal, Larangan", "Rengaspendawa, Larangan"],
+    batasBarat: ["Siwungkuk, Wanasari", "Tegalgandu, Wanasari"],
+    batasTimur: ["Jubang, Bulakamba", "Cipelem, Bulakamba", "Slatri, Larangan"],
+
+    penggunaanLahan: [
+      { jenis: 'Tanah Sawah', luas: 594.80, warna: '#8BC34A' },
+      { jenis: 'Tanah Kering', luas: 128.85, warna: '#CDDC39' },
+      { jenis: 'Tanah Fasilitas Umum', luas: 25, warna: '#FFC107' }
+    ]
   },
   pendidikan: [
     {

@@ -6,8 +6,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pageTitle {
@@ -28,6 +34,57 @@
   font-size: 1.1rem;
 }
 
+/* KARTU STATISTIK LUAS WILAYAH */
+.statContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-width: 320px;
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.statValueContainer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.statValue {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.statUnit {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 10px;
+  color: #555;
+}
+
+.statLabel {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: #666;
+}
+
+/* PETA DESA */
 .mapContainer {
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -42,4 +99,174 @@
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+/* BATAS WILAYAH */
+.batasSection {
+  margin-top: 50px;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.batasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.batasCard {
+  background-color: #fff;
+  border: 1px solid #e9e9e9;
+  border-left: 5px solid #4CAF50;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.batasTitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.batasList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.batasItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.nomor {
+  font-weight: 600;
+  color: #333;
+  padding-top: 2px;
+}
+
+.lokasiDetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.desa {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.kecamatan {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* GRAFIK PENGGUNAAN LAHAN */
+.lahanSection {
+  margin-top: 50px;
+}
+
+.lahanContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.lahanChartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.donutChart {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donutChart::before {
+  content: '';
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  background: #f9f9f9;
+  border-radius: 50%;
+}
+
+.chartCenterInfo {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.totalLahanValue {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+.lahanLegend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 250px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.legendColor {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legendText {
+  font-weight: 600;
+  color: #333;
+  flex-grow: 1;
+}
+
+.legendValue {
+  font-weight: 500;
+  color: #555;
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
