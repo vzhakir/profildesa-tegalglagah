@@ -6,14 +6,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .pageTitle {
@@ -87,10 +81,7 @@
   color: #666;
 }
 
-.mapContainer,
-.batasSection,
-.lahanSection,
-.iklimSection {
+.mapContainer, .batasSection, .lahanSection, .iklimSection {
   margin-top: 50px;
 }
 
@@ -117,16 +108,10 @@
   margin-bottom: 30px;
 }
 
-.batasGrid {
+.batasGrid, .iklimGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  justify-items: center; /* Tambahkan ini */
-}
-
-.batasGrid::after {
-  content: "";
-  flex: auto;
 }
 
 .batasCard {
@@ -137,8 +122,6 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
-  width: 100%; /* Pastikan kartu mengisi sel grid */
-  max-width: 350px; /* Batasi lebar maksimal kartu */
 }
 
 .batasTitle {
@@ -223,14 +206,14 @@
   background-color: #fff;
   padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .legendItem:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .legendColor {
@@ -248,7 +231,7 @@
 
 .lahanDetailContainer {
   width: 100%;
-  min-height: 120px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -259,20 +242,13 @@
   background-color: #333;
   color: #fff;
   border-radius: 8px;
-  padding: 15px;
+  padding: 20px;
   animation: fadeInDetail 0.3s ease;
-  text-align: left;
 }
 
 @keyframes fadeInDetail {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .lahanDetailBox h3 {
@@ -319,12 +295,6 @@
 
 .detailList li:last-child {
   margin-bottom: 0;
-}
-
-.iklimGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
 }
 
 .iklimCard {
