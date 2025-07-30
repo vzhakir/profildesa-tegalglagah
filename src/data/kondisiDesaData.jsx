@@ -5,7 +5,8 @@ export const kondisiDesa = {
     pria: 1285,
     wanita: 1255,
   },
-  wilayah: {
+
+   wilayah: {
     luas: "748,65 Ha",
     batasUtara: ["Petunjungan, Bulakamba", "Dukuhwringin, Slawi"],
     batasSelatan: ["Sitanggal, Larangan", "Rengaspendawa, Larangan"],
@@ -13,9 +14,25 @@ export const kondisiDesa = {
     batasTimur: ["Jubang, Bulakamba", "Cipelem, Bulakamba", "Slatri, Larangan"],
 
     penggunaanLahan: [
-      { jenis: 'Tanah Sawah', luas: 594.80, warna: '#8BC34A' },
-      { jenis: 'Tanah Kering', luas: 128.85, warna: '#CDDC39' },
-      { jenis: 'Tanah Fasilitas Umum', luas: 25, warna: '#FFC107' }
+      { 
+        jenis: 'Tanah Sawah', 
+        luas: 594.8, 
+        warna: '#8BC34A', 
+        detail: 'Terdiri dari 100% Sawah Irigasi Teknis yang produktif sepanjang tahun.' 
+      },
+      { 
+        jenis: 'Tanah Kering', 
+        luas: 128.85, 
+        warna: '#CDDC39', 
+        detail: 'Digunakan untuk tegal/ladang, ditanami palawija dan hortikultura.' 
+      },
+      { 
+        jenis: 'Tanah Fasilitas Umum', 
+        luas: 25, 
+        warna: '#FFC107', 
+        // KEMBALIKAN MENJADI STRING BIASA
+        detail: 'Rincian: Tanah Bengkok (22,30 Ha), Perkantoran (1,10 Ha), Ruang Publik (0,06 Ha), Pemakaman (1,35 Ha), TPS (0,18 Ha), dan Sekolah (0,01 Ha).' 
+      }
     ]
   },
   pendidikan: [

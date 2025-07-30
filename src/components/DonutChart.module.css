@@ -1,0 +1,30 @@
+.chart {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.slice {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+}
+
+.slice:hover {
+  transform: scale(1.03);
+}
+
+.centerTextGroup {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.centerLabel {
+  font-size: 16px;
+  fill: #666;
+}
+
+.centerValue {
+  font-size: 30px;
+  font-weight: bold;
+  fill: #333;
+}
