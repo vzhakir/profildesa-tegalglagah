@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Peta.module.css';
 import { 
   FaMapMarkedAlt, FaChartArea, FaCloudShowersHeavy, FaTemperatureHigh, FaWater, 
-  FaPalette, FaCube, FaMountain, FaSeedling, FaSun, FaBuilding 
+  FaPalette, FaCube, FaMountain, FaSeedling, FaSun, FaBuilding, FaRoute 
 } from 'react-icons/fa';
 import petaDesaImage from '../assets/peta.jpg';
 import { kondisiDesa } from '../data/kondisiDesaData';
@@ -13,7 +13,6 @@ function PetaPage() {
   const [luasValue, luasUnit] = luas.split(' ');
   const [hoveredLahan, setHoveredLahan] = useState(null);
 
-  // Menyiapkan ikon untuk setiap jenis lahan
   const iconMap = {
     'Tanah Sawah': <FaSeedling />,
     'Tanah Kering': <FaSun />,
@@ -22,6 +21,13 @@ function PetaPage() {
 
   const dataIklim = { bulanHujan: 6, suhu: 28, ketinggian: 5 };
   const dataTanah = { warna: "Hitam", tekstur: "Lempungan", kemiringan: 1 };
+  
+  // Data baru untuk jarak
+  const dataJarak = {
+    kecamatan: "12,00",
+    kabupaten: "15,00",
+    provinsi: "412,00"
+  };
 
   const renderBatasCard = (title, data) => (
     <div className={styles.batasCard}>
@@ -51,31 +57,19 @@ function PetaPage() {
       <div className={styles.statGrid}>
         <div className={`${styles.statCard} ${styles.totalCard}`}>
           <div className={styles.statIcon}><FaChartArea /></div>
-          <div className={styles.statValueContainer}>
-            <span className={styles.statValue}>{luasValue}</span>
-            <span className={styles.statUnit}>{luasUnit}</span>
-          </div>
+          <div className={styles.statValueContainer}><span className={styles.statValue}>{luasValue}</span><span className={styles.statUnit}>{luasUnit}</span></div>
           <div className={styles.statLabel}>Total Luas Wilayah</div>
         </div>
-
         {penggunaanLahan.map((item) => (
           <div key={item.jenis} className={styles.statCard}>
-            <div className={styles.statIcon} style={{ color: item.warna }}>
-              {iconMap[item.jenis] || <FaChartArea />}
-            </div>
-            <div className={styles.statValueContainer}>
-              <span className={styles.statValue}>
-                {item.luas.toLocaleString('id-ID', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
-              </span>
-              <span className={styles.statUnit}>Ha</span>
-            </div>
+            <div className={styles.statIcon} style={{ color: item.warna }}>{iconMap[item.jenis] || <FaChartArea />}</div>
+            <div className={styles.statValueContainer}><span className={styles.statValue}>{item.luas.toLocaleString('id-ID', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span><span className={styles.statUnit}>Ha</span></div>
             <div className={styles.statLabel}>{item.jenis}</div>
           </div>
         ))}
       </div>
       
       <div className={styles.mapContainer}><img src={petaDesaImage} alt="Peta Desa Tegalglagah" className={styles.mapImage} /></div>
-      
       <div className={styles.batasSection}><h2 className={styles.sectionTitle}>Batas-Batas Wilayah</h2><div className={styles.batasGrid}>{renderBatasCard('Utara', batasUtara)}{renderBatasCard('Timur', batasTimur)}{renderBatasCard('Selatan', batasSelatan)}{renderBatasCard('Barat', batasBarat)}</div></div>
       
       <div className={styles.lahanSection}>
@@ -104,6 +98,31 @@ function PetaPage() {
           <div className={styles.iklimCard}><div className={styles.iklimIcon}><FaPalette /></div><div className={styles.tanahValue}>{dataTanah.warna}</div><p className={styles.iklimLabel}>Warna Tanah Dominan</p></div>
           <div className={styles.iklimCard}><div className={styles.iklimIcon}><FaCube /></div><div className={styles.tanahValue}>{dataTanah.tekstur}</div><p className={styles.iklimLabel}>Tekstur Tanah</p></div>
           <div className={styles.iklimCard}><div className={styles.iklimIcon}><FaMountain /></div><div className={styles.iklimValue}>{dataTanah.kemiringan}<span className={styles.iklimUnit}>°</span></div><p className={styles.iklimLabel}>Tingkat Kemiringan</p></div>
+        </div>
+      </div>
+
+      {/* BAGIAN BARU: JARAK KE PUSAT PEMERINTAHAN */}
+      <div className={styles.iklimSection}>
+        <h2 className={styles.sectionTitle}>Jarak ke Pusat Pemerintahan</h2>
+        <div className={styles.iklimGrid}>
+          {/* Card Jarak ke Kecamatan */}
+          <div className={styles.iklimCard}>
+            <div className={styles.iklimIcon}><FaRoute /></div>
+            <div className={styles.iklimValue}>{dataJarak.kecamatan}<span className={styles.iklimUnit}>Km</span></div>
+            <p className={styles.iklimLabel}>Ke Ibukota Kecamatan</p>
+          </div>
+          {/* Card Jarak ke Kabupaten */}
+          <div className={styles.iklimCard}>
+            <div className={styles.iklimIcon}><FaRoute /></div>
+            <div className={styles.iklimValue}>{dataJarak.kabupaten}<span className={styles.iklimUnit}>Km</span></div>
+            <p className={styles.iklimLabel}>Ke Ibukota Kabupaten</p>
+          </div>
+          {/* Card Jarak ke Provinsi */}
+          <div className={styles.iklimCard}>
+            <div className={styles.iklimIcon}><FaRoute /></div>
+            <div className={styles.iklimValue}>{dataJarak.provinsi}<span className={styles.iklimUnit}>Km</span></div>
+            <p className={styles.iklimLabel}>Ke Ibukota Provinsi</p>
+          </div>
         </div>
       </div>
     </div>
