@@ -1,0 +1,146 @@
+.footer {
+  background-color: #f8f9fa; /* Warna latar belakang abu-abu sangat muda */
+  color: #6c757d; /* Warna teks abu-abu */
+  padding: 60px 0 20px 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr; /* 3 kolom dengan rasio lebar */
+  gap: 50px; /* Jarak antar kolom */
+}
+
+/* --- Kolom 1: Info --- */
+.infoColumn .logoContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.infoColumn .logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.infoColumn h2 {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin: 0;
+}
+
+.infoColumn p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.socialIcons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.socialIcons a:hover {
+  background-color: #4CAF50; /* Warna hijau primer */
+  color: white;
+}
+
+/* --- Kolom 2 & 3: Menu & Kontak --- */
+.footerTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Garis bawah merah seperti di gambar */
+.footerTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #E53935; /* Warna merah */
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuList li {
+  margin-bottom: 12px;
+}
+
+.menuList a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menuList a:hover {
+  color: #E53935;
+}
+
+.kontakInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.kontakText span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.kontakText a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #343a40;
+  text-decoration: none;
+}
+
+/* --- Bagian Bawah Footer (Copyright) --- */
+.footerBottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+/* --- Responsif untuk Mobile --- */
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr; /* Kolom menjadi 1 baris di mobile */
+    text-align: center;
+  }
+  .infoColumn .logoContainer, .socialIcons {
+    justify-content: center;
+  }
+  .footerTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
