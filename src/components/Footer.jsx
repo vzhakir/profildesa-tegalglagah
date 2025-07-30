@@ -49,8 +49,8 @@ function Footer() {
             <FaEnvelope />
             <div className={styles.kontakText}>
               <span>Hubungi Kami Melalui</span>
-              <a href="mailto:tegalglagah@gmail.com">
-                tegalglagah@gmail.com
+              <a href="mailto:tegalglagah.desa@gmail.com">
+                tegalglagah.desa@gmail.com
               </a>
             </div>
           </div>
