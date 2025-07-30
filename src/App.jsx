@@ -1,12 +1,14 @@
-// src/App.jsx
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import KondisiDesaPage from './components/KondisiDesaPage';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; 
 import SejarahPage from './components/SejarahPage';
 import VisiMisiPage from './components/VisiMisiPage';
+import StrukturOrganisasiPage from './components/StrukturOrganisasi';
+import DemografiPage from './components/Demografi';
+import PetaPage from './components/Peta';
 
 function App() {
   return (
@@ -18,11 +20,13 @@ function App() {
           <Route path="/profil" element={<ProfilePage />} />
           <Route path="/kondisi-desa" element={<KondisiDesaPage />} />
           
-          {/* TAMBAHKAN RUTE BARU DI SINI */}
           <Route path="/profil/sejarah" element={<SejarahPage />} />
           <Route path="/profil/visi-misi" element={<VisiMisiPage />} />
+          <Route path="/profil/struktur-organisasi" element={<StrukturOrganisasiPage />} />
+
+          <Route path="/kondisi-desa/peta" element={<PetaPage />} />
+          <Route path="/kondisi-desa/demografi" element={<DemografiPage />} />
           
-          {/* ... rute lainnya */}
         </Routes>
       </main>
       <Footer />

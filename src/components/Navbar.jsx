@@ -1,6 +1,8 @@
+// src/components/Navbar.jsx
+
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import logoDesa from '../assets/logobrebes.svg';
+import logoDesa from '../assets/shallots.svg';
 
 function Navbar() {
   const getLinkClass = ({ isActive }) =>
@@ -14,13 +16,16 @@ function Navbar() {
       </Link>
       
       <ul className={styles.navMenu}>
-        {/* ... sisa item menu tidak berubah ... */}
         <li className={styles.navItem}>
           <NavLink to="/" className={getLinkClass}>Home</NavLink>
         </li>
 
         <li className={styles.navItem}>
-          <NavLink to="/profil" className={getLinkClass}>
+          <NavLink 
+            to="/profil" 
+            className={getLinkClass}
+            onClick={(e) => e.preventDefault()}
+          >
             Profil <span className={styles.arrow}>▼</span>
           </NavLink>
           <ul className={styles.dropdownMenu}>
@@ -31,10 +36,15 @@ function Navbar() {
         </li>
 
         <li className={styles.navItem}>
-           <NavLink to="/kondisi-desa" className={getLinkClass}>
+           <NavLink 
+            to="/kondisi-desa" 
+            className={getLinkClass}
+            onClick={(e) => e.preventDefault()}
+          >
             Kondisi Desa <span className={styles.arrow}>▼</span>
           </NavLink>
           <ul className={styles.dropdownMenu}>
+            <li><Link to="/kondisi-desa/peta">Peta Desa</Link></li>
             <li><Link to="/kondisi-desa/demografi">Demografi</Link></li>
             <li><Link to="/kondisi-desa/sosial">Keadaan Sosial</Link></li>
             <li><Link to="/kondisi-desa/ekonomi">Keadaan Ekonomi</Link></li>

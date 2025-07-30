@@ -1,0 +1,112 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+/* --- Bagian Kepala Desa --- */
+.kepalaDesaSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.kepalaDesaCard {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+}
+
+.kepalaDesaFoto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #4CAF50;
+}
+
+/* --- Bagian Perangkat Desa --- */
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #f0f0f0;
+}
+
+.nama {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0 5px 0;
+}
+
+.jabatan {
+  font-size: 1rem;
+  color: #E53935;
+  margin: 0;
+}
+
+.separator {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 40px auto;
+  width: 80%;
+}

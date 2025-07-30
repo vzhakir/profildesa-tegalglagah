@@ -1,0 +1,169 @@
+/* src/components/Demografi.module.css */
+
+.pageContainer {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 auto 50px auto;
+}
+
+/* KONTENER UTAMA GRAFIK & LEGENDA */
+.chartSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ELEMEN GRAFIK DONAT */
+.donutChart {
+  --pria-percent: 50.6; /* Nilai default, akan ditimpa oleh inline style */
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: relative;
+  /* Membuat gradien warna berdasarkan persentase */
+  background: conic-gradient(
+    #43A047 0% calc(var(--pria-percent) * 1%), 
+    #E53935 calc(var(--pria-percent) * 1%) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lingkaran putih di tengah untuk membuat efek donat */
+.donutChart::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Info di tengah grafik */
+.chartCenterInfo {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.totalPenduduk {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* LEGENDA */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.legendColor {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.colorPria {
+  background-color: #43A047;
+}
+
+.colorWanita {
+  background-color: #E53935;
+}
+
+.legendText {
+  display: flex;
+  flex-direction: column;
+}
+
+.legendText strong {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.legendText span {
+  color: #666;
+}
+
+/* TABEL DETAIL */
+.section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTable td {
+  padding: 12px 5px;
+  font-size: 1.1rem;
+}
+
+.dataTable td:first-child {
+  font-weight: 500;
+  color: #333;
+  width: 50%;
+}
+
+.dataTable td:last-child {
+  color: #555;
+  font-weight: bold;
+}
+
+.totalRow td {
+  font-weight: bold;
+  color: #000;
+  border-top: 2px solid #ddd;
+}

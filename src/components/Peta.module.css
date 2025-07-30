@@ -1,0 +1,45 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+}
+
+.mapContainer {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
