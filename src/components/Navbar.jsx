@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.brand}>
-        Desa Tebing Tinggi
+        Desa Tegalglagah
       </Link>
       <div className={styles.navLinks}>
         <NavLink to="/" className={getLinkClass}>Home</NavLink>
