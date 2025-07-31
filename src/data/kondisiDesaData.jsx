@@ -123,27 +123,96 @@ export const kondisiDesa = {
         ]
       }
     ],
-    // Data Distribusi Agama (BARU)
-    religionDistribution: [
+    religionCombinedDistribution: {
+      category: 'Total Penduduk Berdasarkan Agama',
+      segments: [
+        { label: 'Islam', value: 8384 + 7877, color: '#4CAF50', legendTextDisplay: 'Islam' },
+        { label: 'Kristen', value: 0 + 1, color: '#2196F3', legendTextDisplay: 'Kristen' },
+        { label: 'Katolik', value: 0 + 0, color: '#FFC107', legendTextDisplay: 'Katolik' },
+        { label: 'Hindu', value: 0 + 0, color: '#F4511E', legendTextDisplay: 'Hindu' },
+        { label: 'Buddha', value: 0 + 0, color: '#9C27B0', legendTextDisplay: 'Buddha' },
+        { label: 'Kepercayaan KTYME', value: 0 + 0, color: '#795548', legendTextDisplay: 'Kepercayaan KTYME' },
+        { label: 'Lainnya', value: 0 + 0, color: '#607D8B', legendTextDisplay: 'Lainnya' }
+      ]
+    },
+    etnis: [
       {
-        category: 'Islam',
+        category: 'Jawa',
         segments: [
-          { label: 'Laki-laki', value: 8384, color: '#4CAF50' }, // Hijau
-          { label: 'Perempuan', value: 7877, color: '#E53935' }  // Merah
+          { label: 'Laki-laki', value: 8390, color: '#42A5F5' }, // Ubah warna agar konsisten dengan gender
+          { label: 'Perempuan', value: 7883, color: '#FF7043' }  // Ubah warna agar konsisten dengan gender
         ]
       },
       {
-        category: 'Kristen',
+        category: 'Sunda',
         segments: [
-          { label: 'Laki-laki', value: 0, color: '#4CAF50' },
-          { label: 'Perempuan', value: 1, color: '#E53935' }
+          { label: 'Laki-laki', value: 0, color: '#42A5F5' },
+          { label: 'Perempuan', value: 0, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Madura',
+        segments: [
+          { label: 'Laki-laki', value: 0, color: '#42A5F5' },
+          { label: 'Perempuan', value: 0, color: '#FF7043' }
         ]
       },
       {
         category: 'Lainnya',
         segments: [
-          { label: 'Laki-laki', value: 0, color: '#4CAF50' },
-          { label: 'Perempuan', value: 0, color: '#E53935' }
+          { label: 'Laki-laki', value: 0, color: '#42A5F5' },
+          { label: 'Perempuan', value: 0, color: '#FF7043' }
+        ]
+      }
+    ],
+    disabilitas: [
+      {
+        category: 'Tuna Netra',
+        segments: [
+          { label: 'Laki-laki', value: 1, color: '#42A5F5' },
+          { label: 'Perempuan', value: 1, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Lumpuh',
+        segments: [
+          { label: 'Laki-laki', value: 0, color: '#42A5F5' },
+          { label: 'Perempuan', value: 2, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Tuna Daksa',
+        segments: [
+          { label: 'Laki-laki', value: 6, color: '#42A5F5' },
+          { label: 'Perempuan', value: 1, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Idiot',
+        segments: [
+          { label: 'Laki-laki', value: 3, color: '#42A5F5' },
+          { label: 'Perempuan', value: 0, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Gila',
+        segments: [
+          { label: 'Laki-laki', value: 9, color: '#42A5F5' },
+          { label: 'Perempuan', value: 2, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Stress',
+        segments: [
+          { label: 'Laki-laki', value: 4, color: '#42A5F5' },
+          { label: 'Perempuan', value: 4, color: '#FF7043' }
+        ]
+      },
+      {
+        category: 'Autis',
+        segments: [
+          { label: 'Laki-laki', value: 2, color: '#42A5F5' },
+          { label: 'Perempuan', value: 1, color: '#FF7043' }
         ]
       }
     ]
@@ -201,6 +270,17 @@ export const kondisiDesa = {
             { label: 'Jumlah Unit Sumur Pompa', value: 2000, color: '#42A5F5', legendTextDisplay: 'Jumlah Unit Sumur Pompa (2000)' },
             { label: 'Sisa Potensi Pemanfaat', value: 1800, color: '#FF7043', legendTextDisplay: 'Sisa Potensi Pemanfaat (3800)' }
         ]
+    },
+    sungai: {
+      jumlahSungai: 1,
+      kondisi: {
+        tercemar: true,
+        pengendapanLumpurTinggi: true,
+        keruh: true,
+        jernih: false,
+        berkurangnyaBiotaSungai: true,
+        kering: false
+      }
     }
   },
   pendidikan: [

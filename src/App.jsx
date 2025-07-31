@@ -9,6 +9,7 @@ import VisiMisiPage from './components/VisiMisiPage';
 import StrukturOrganisasiPage from './components/StrukturOrganisasi';
 import DemografiPage from './components/DemografiPage';
 import PetaPage from './components/PetaPage';
+import KeadaanSosialPage from './components/KeadaanSosialPage'; // Import komponen baru
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
 
           <Route path="/kondisi-desa/peta" element={<PetaPage />} />
           <Route path="/kondisi-desa/demografi" element={<DemografiPage />} />
+          <Route path="/kondisi-desa/sosial" element={<KeadaanSosialPage />} /> {/* Rute baru */}
           
         </Routes>
       </main>

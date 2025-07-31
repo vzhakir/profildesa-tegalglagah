@@ -7,8 +7,9 @@ const getCoordsOnCircle = (angle, radius) => ({
 });
 
 const getArcPath = (startAngle, endAngle, radius, innerRadius) => {
+  // Handle full circle case to avoid rendering issues with arcs
   if (endAngle - startAngle >= 2 * Math.PI) {
-    endAngle = startAngle + (2 * Math.PI) - 0.0001;
+    endAngle = startAngle + (2 * Math.PI) - 0.0001; // Subtract tiny amount to ensure arc renders
   }
   
   const start = getCoordsOnCircle(startAngle, radius);
@@ -28,28 +29,48 @@ const getArcPath = (startAngle, endAngle, radius, innerRadius) => {
 
 function DonutChart({ data, onSliceHover, valueKey = 'luas', unit = 'Ha' }) {
   const totalValue = data.reduce((sum, item) => sum + item[valueKey], 0);
-  let cumulativeAngle = -Math.PI / 2;
+  let cumulativeAngle = -Math.PI / 2; // Start from top
+
+  // Handle case where totalValue is 0 to prevent division by zero or rendering issues
+  if (totalValue === 0) {
+    return (
+      <svg viewBox="-100 -100 200 200" className={styles.chart}>
+        {/* Render a single grey circle or handle as empty state if preferred */}
+        <circle cx="0" cy="0" r="95" fill="#e0e0e0" /> {/* Outer ring */}
+        <circle cx="0" cy="0" r="65" fill="#ffffff" /> {/* Inner hole */}
+        <g className={styles.centerTextGroup}>
+          <text x="0" y="0" textAnchor="middle" dominantBaseline="middle" className={styles.centerLabel}>
+            No Data
+          </text>
+        </g>
+      </svg>
+    );
+  }
 
   return (
     <svg viewBox="-100 -100 200 200" className={styles.chart}>
       {data.map((item) => {
-        const angle = (item[valueKey] / totalValue) * (2 * Math.PI);
-        const startAngle = cumulativeAngle;
-        const endAngle = cumulativeAngle + angle;
-        cumulativeAngle = endAngle;
+        // Only render slices if their value is greater than 0
+        if (item[valueKey] > 0) {
+          const angle = (item[valueKey] / totalValue) * (2 * Math.PI);
+          const startAngle = cumulativeAngle;
+          const endAngle = cumulativeAngle + angle;
+          cumulativeAngle = endAngle;
 
-        const pathData = getArcPath(startAngle, endAngle, 95, 65);
+          const pathData = getArcPath(startAngle, endAngle, 95, 65); // Outer radius 95, inner radius 65
 
-        return (
-          <path
-            key={item.jenis}
-            d={pathData}
-            fill={item.warna}
-            className={styles.slice}
-            onMouseEnter={() => onSliceHover(item)}
-            onMouseLeave={() => onSliceHover(null)}
-          />
-        );
+          return (
+            <path
+              key={item.jenis || item.label} // Use item.label if jenis is not available
+              d={pathData}
+              fill={item.warna || item.color} // Use item.color if warna is not available
+              className={styles.slice}
+              onMouseEnter={() => onSliceHover(item)}
+              onMouseLeave={() => onSliceHover(null)}
+            />
+          );
+        }
+        return null; // Don't render slice if value is 0
       })}
       <g className={styles.centerTextGroup}>
         <text x="0" y="-18" textAnchor="middle" className={styles.centerLabel}>

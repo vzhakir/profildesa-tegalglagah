@@ -397,10 +397,11 @@
 .educationDonutItem .sectionTitle { /* Judul di dalam item grid */
   font-size: 1.4rem; /* Lebih kecil dari judul section utama */
   margin-bottom: 15px;
+  margin-top: 50px; /* Tambahkan margin-top di sini */
 }
 
 .educationDonutItem .lahanContent {
-  flex-direction: column; /* Konten di dalam item donut tumpuk vertikal */
+  flex-direction: column; /* Konten di dalam item donut tumpuk vertikal (visual & info) */
   gap: 15px;
 }
 
@@ -410,36 +411,63 @@
   flex: none; /* Hapus flex-basis */
 }
 
+/* KUNCI PERUBAHAN DI SINI: Mengatur info container menjadi horizontal */
 .educationDonutItem .lahanInfoContainer {
-  flex: 1; /* Proporsi untuk info/legend */
-  min-width: 0; /* Biarkan menyusut */
-  flex: none; /* Hapus flex-basis */
+  flex-direction: row; /* Mengatur item legenda dan detail box secara horizontal */
+  align-items: flex-start; /* Sejajarkan item ke atas */
+  justify-content: space-around; /* Distribusi ruang di antara elemen */
+  flex-wrap: wrap; /* Izinkan wrap jika layar terlalu kecil */
+  gap: 15px; /* Jarak antara legenda dan detail box */
+  min-width: 100%; /* Pastikan kontainer info mengambil lebar penuh dari parentnya */
+  padding-bottom: 5px; /* Sedikit padding di bawah jika konten melebar */
 }
 
 .educationDonutItem .lahanLegend {
+  flex: 1; /* Biarkan legenda mengambil ruang */
+  min-width: 150px; /* Minimal lebar legenda tetap */
+  max-width: 180px; /* Batasi lebar maksimum legenda */
   gap: 10px; /* Kurangi gap legenda */
 }
 
-.educationDonutItem .legendItem {
-  gap: 8px; /* Kurangi gap item legenda */
-  padding: 5px 8px; /* Kurangi padding item legenda */
-}
-
-.educationDonutItem .legendColor {
-  width: 16px; /* Sesuaikan ukuran kotak warna */
-  height: 16px;
-}
-
-.educationDonutItem .legendText {
-  font-size: 0.85rem; /* Sesuaikan ukuran font teks legenda */
-}
-
 .educationDonutItem .lahanDetailContainer {
+  flex: 1.5; /* Biarkan detail container mengambil lebih banyak ruang */
+  min-width: 180px; /* Lebar minimum detail container */
   min-height: 80px; /* Kurangi tinggi detail container */
+  text-align: left;
+  max-width: 250px; /* Batasi lebar maksimum detail box */
+  box-sizing: border-box; /* Pastikan padding dihitung dalam width */
+  margin-top: 15px; /* Menambahkan margin top untuk menggeser ke bawah */
 }
 
 .educationDonutItem .lahanDetailBox {
-  padding: 10px; /* Kurangi padding detail box */
+  padding: 10px;
+  box-sizing: border-box; /* Penting: Pastikan padding termasuk dalam lebar total */
+  word-break: break-word; /* Memastikan teks panjang pecah baris */
+}
+
+/* Tambahkan kelas ini untuk menonaktifkan efek hover pada elemen tertentu */
+.noHover {
+  pointer-events: none; /* Mencegah event pointer (termasuk hover) */
+  cursor: default !important; /* Pastikan kursor tidak berubah menjadi pointer */
+  transform: none !important; /* Pastikan tidak ada scaling */
+  box-shadow: none !important; /* Pastikan tidak ada shadow */
+}
+
+/* Jika Anda memiliki efek hover pada .legendItem, pastikan .noHover menimpanya */
+.legendItem.noHover:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Gaya tambahan untuk .placeholderLegendOnly agar pesan detail box hanya untuk legenda usia */
+.placeholderLegendOnly p {
+  visibility: visible; /* Biarkan pesan terlihat */
+  text-align: center; /* Sesuaikan perataan teks jika perlu */
+  font-size: 0.85rem; /* Sesuaikan ukuran font */
+  padding-top: 5px; /* Sedikit padding dari atas */
+  color: #999;
+  font-style: italic;
+  word-break: break-word; /* Pastikan teks placeholder juga pecah baris */
 }
 
 /* Re-gunakan gaya .stackedBarChartContainer untuk agama */
