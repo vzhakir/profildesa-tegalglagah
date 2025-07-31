@@ -1,67 +1,70 @@
-.container {
-  width: 100%;
-  background-color: #f9f9f9;
-  padding: 30px;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-
-.title {
-  text-align: center;
-  font-size: 1.2rem;
+.chartContainer {
+  width: 95%;
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #333;
-  margin: 0 0 30px 0;
 }
-
+.chartTitle {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
 .chart {
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  width: 100%;
-  height: 200px; /* Tinggi Chart */
+  height: 300px;
 }
-
+.yAxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  padding-right: 10px;
+  border-right: 2px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #666;
+}
+.barsContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-left: 10px;
+  gap: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
 .barGroup {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* Mendorong bar ke bawah */
-  flex: 1;
-}
-
-.value {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.barWrapper {
-  width: 50px;
+  text-align: center;
   height: 100%;
-  background-color: #e9e9e9;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Bar tumbuh dari bawah */
+  justify-content: flex-end;
 }
-
 .bar {
-  width: 100%;
+  width: 70%;
+  max-width: 80px;
   background-color: #4CAF50;
-  border-radius: 5px;
-  animation: grow 0.8s ease-out;
+  border-radius: 4px 4px 0 0;
+  transition: background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
-
-@keyframes grow {
-  from {
-    height: 0%;
-  }
+.bar:hover { filter: brightness(1.1); }
+.barValue {
+  position: absolute;
+  top: -22px;
+  font-weight: bold;
+  font-size: 1rem;
 }
-
-.label {
+.barLabel {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #666;
-  text-align: center;
+  font-weight: 500;
+  color: #555;
 }
