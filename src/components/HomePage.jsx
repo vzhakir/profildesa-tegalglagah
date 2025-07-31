@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './HomePage.module.css'; // Kita akan buat file CSS ini
+import styles from './HomePage.module.css';
 
-// Import gambar dari folder assets
-import HeroBackground from '../assets/herobg.jpg';
+// Impor video dari folder assets
+import HeroBackground from '../assets/background.mp4';
 import IconPertanian from '../assets/shallots.svg';
-import IconPeternakan from '../assets/farm.svg';4
-
+import IconPeternakan from '../assets/farm.svg';
 
 function HomePage() {
-  // Data dummy untuk berita, bisa diganti dengan data dari API nanti
   const berita = [
     { id: 1, judul: "Kerja Bakti Membersihkan Sungai Desa", tanggal: "28 Juli 2025" },
     { id: 2, judul: "Penyuluhan Pertanian Organik untuk Petani Lokal", tanggal: "25 Juli 2025" },
@@ -19,10 +17,13 @@ function HomePage() {
   return (
     <div className={styles.homePage}>
       {/* 1. Hero Section */}
-      <section 
-        className={styles.hero} 
-        style={{ backgroundImage: `url(${HeroBackground})` }}
-      >
+      <section className={styles.hero}>
+        {/* Tambahkan elemen video di sini */}
+        <video autoPlay loop muted className={styles.heroVideo}>
+          <source src={HeroBackground} type="video/mp4" />
+          Browser Anda tidak mendukung tag video.
+        </video>
+
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
           <p className={styles.heroSubtitle}>SELAMAT DATANG DI</p>

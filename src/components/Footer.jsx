@@ -34,10 +34,10 @@ function Footer() {
         <div className={styles.menuColumn}>
           <h3 className={styles.footerTitle}>Menu</h3>
           <ul className={styles.menuList}>
-            <li><Link to="/sejarah">Sejarah</Link></li>
-            <li><Link to="/profil">Visi & Misi</Link></li>
-            <li><Link to="/kondisi-desa">Demografi</Link></li>
-            <li><Link to="/profil#struktur">Struktur Organisasi</Link></li>
+            <li><Link to="/profil/sejarah">Sejarah</Link></li>
+            <li><Link to="/profil/visi-misi">Visi & Misi</Link></li>
+            <li><Link to="/kondisi-desa/demografi">Demografi</Link></li>
+            <li><Link to="/profil/struktur-organisasi">Struktur Organisasi</Link></li>
             <li><Link to="/potensi">Masalah dan Potensi</Link></li>
           </ul>
         </div>

@@ -5,14 +5,24 @@
 /* === Hero Section === */
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden; /* Pastikan video tidak keluar dari container */
+}
+
+/* Gaya untuk elemen video baru */
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ini akan memastikan video menutupi seluruh area */
+  z-index: -1;      /* Posisikan video di lapisan paling belakang */
 }
 
 .heroOverlay {
@@ -21,19 +31,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Lapisan gelap untuk membuat teks terbaca */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Overlay di atas video */
 }
 
 .heroContent {
-  position: relative; /* Agar konten berada di atas overlay */
-  z-index: 1;
+  position: relative;
+  z-index: 1; /* Konten di atas overlay */
 }
 
 .heroSubtitle {
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 2px;
-  /* Animasi Masuk */
   animation: fadeInDown 0.8s ease-out both;
 }
 
@@ -41,8 +51,7 @@
   font-size: 4rem;
   margin: 10px 0;
   font-weight: 700;
-  color: #4CAF50; /* Warna hijau seperti di contoh */
-  /* Animasi Masuk dengan delay */
+  color: #4CAF50;
   animation: fadeInDown 0.8s 0.2s ease-out both;
 }
 
@@ -50,19 +59,17 @@
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 30px auto;
-  /* Animasi Masuk dengan delay */
   animation: fadeInDown 0.8s 0.4s ease-out both;
 }
 
 .ctaButton {
-  background-color: #E53935; /* Warna merah seperti di contoh */
+  background-color: #E53935;
   color: white;
   padding: 15px 30px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  /* Animasi Masuk dengan delay */
   animation: fadeInUp 0.8s 0.6s ease-out both;
 }
 
