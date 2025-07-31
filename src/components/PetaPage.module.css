@@ -1,14 +1,40 @@
+/* src/components/PetaPage.module.css */
+
 .pageContainer {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
-  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+/* Hapus properti animasi dari sini */
+.statGrid,
+.mapContainer,
+.batasSection,
+.lahanSection,
+.iklimSection {
+  opacity: 0; /* Mulai dari tidak terlihat */
+  transform: translateY(15px); /* Posisi awal sedikit ke bawah */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transisi untuk animasi */
+}
+
+/* Kelas ini akan ditambahkan oleh JavaScript ketika elemen masuk viewport */
+.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+  /* Anda bisa menambahkan animation-delay di sini jika ingin delay antar elemen walaupun sudah isVisible */
+}
+
 
 .pageTitle {
   text-align: center;
@@ -101,17 +127,26 @@
   border-radius: 5px;
 }
 
-.sectionTitle {
+.sectionTitle { /* Ini adalah sectionTitle yang umum */
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 30px;
+  display: flex; /* Tambahkan kembali display flex jika Anda ingin ikon/gap */
+  justify-content: center; /* <-- FIX: Memusatkan konten judul */
+  align-items: center;
+  gap: 10px;
 }
+
 
 .batasGrid, .iklimGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items: center;
+  justify-content: center;
 }
 
 .batasCard {

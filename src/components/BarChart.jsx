@@ -22,7 +22,7 @@ const BarChart = ({ data, title }) => {
                   height: `${(item.value / maxValue) * 100}%`,
                   backgroundColor: item.color || '#4CAF50',
                 }}
-                title={`${item.label}: ${item.value} Unit`}
+                title={`${item.label}: ${item.value}`} // Di sini hanya menggunakan label dan value, bukan 'Unit' default
               >
                 <span className={styles.barValue}>{item.value}</span>
               </div>

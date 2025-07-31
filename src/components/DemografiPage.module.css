@@ -48,7 +48,7 @@
   position: relative;
   /* Membuat gradien warna berdasarkan persentase */
   background: conic-gradient(
-    #43A047 0% calc(var(--pria-percent) * 1%), 
+    #43A047 0% calc(var(--pria-percent) * 1%),
     #E53935 calc(var(--pria-percent) * 1%) 100%
   );
   display: flex;
@@ -125,7 +125,7 @@
   color: #666;
 }
 
-/* TABEL DETAIL */
+/* TABEL DETAIL (sekarang diubah ke kartu) */
 .section {
   background-color: #fff;
   padding: 30px;
@@ -141,29 +141,46 @@
   margin-bottom: 25px;
 }
 
-.dataTable {
-  width: 100%;
-  border-collapse: collapse;
+/* NEW: Grid untuk Kartu Informasi */
+.infoCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center; /* Memusatkan kartu jika tidak mengisi penuh baris */
 }
 
-.dataTable td {
-  padding: 12px 5px;
-  font-size: 1.1rem;
-}
-
-.dataTable td:first-child {
-  font-weight: 500;
+.infoCard {
+  background: #f9f9f9;
+  border: 1px solid #e9e9e9;
   color: #333;
-  width: 50%;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
-.dataTable td:last-child {
+.infoIcon {
+  font-size: 2.5rem;
+  color: #4CAF50; /* Warna ikon hijau */
+  margin-bottom: 10px;
+}
+
+.infoValue {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.infoUnit {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-left: 8px;
   color: #555;
-  font-weight: bold;
 }
 
-.totalRow td {
-  font-weight: bold;
-  color: #000;
-  border-top: 2px solid #ddd;
+.infoLabel {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  color: #666;
 }

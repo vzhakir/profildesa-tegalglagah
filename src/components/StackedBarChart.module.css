@@ -1,0 +1,162 @@
+/* src/components/StackedBarChart.module.css */
+
+.outerContainer { /* Kontainer terluar untuk judul + chart/legend */
+  width: 95%;
+  max-width: 800px; /* Lebar maksimum keseluruhan grafik */
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column; /* Mengatur judul di atas, lalu chart dan legend di bawahnya */
+  align-items: center; /* Memusatkan konten horizontal */
+}
+
+.chartTitle {
+  text-align: center;
+  margin-bottom: 30px; /* Spasi di bawah judul */
+  font-size: 1.5rem;
+  width: 100%; /* Memastikan judul mengisi lebar penuh */
+}
+
+.chartAndLegendWrapper { /* Pembungkus untuk grafik dan legenda */
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: row; /* Elemen akan sejajar horizontal */
+  align-items: center; /* <-- FIX: Memusatkan item (grafik dan legenda) secara vertikal */
+  justify-content: center; /* Memusatkan mereka secara horizontal jika ada sisa ruang */
+  gap: 30px; /* Jarak antara grafik dan legenda */
+  flex-wrap: wrap; /* Izinkan wrap ke baris baru jika ruang tidak cukup (untuk responsif) */
+  width: 100%; /* Mengambil lebar penuh dari outerContainer */
+}
+
+.chart {
+  display: flex;
+  height: 300px;
+  flex-grow: 1; /* Grafik akan tumbuh mengisi ruang */
+  flex-shrink: 0; /* Mencegah grafik menyusut terlalu banyak */
+  max-width: 60%; /* Berikan ruang untuk legenda di samping */
+  min-width: 300px; /* Minimal lebar grafik */
+}
+
+.yAxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  padding-right: 5px; /* Mengurangi padding untuk mendekatkan angka ke garis */
+  height: 100%;
+  border-right: 2px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.barsContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Memusatkan batang di tengah kontainer batangnya */
+  align-items: flex-end;
+  padding-left: 0; /* Menghapus padding kiri */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.barGroup {
+  width: 70%; /* Lebar batang itu sendiri */
+  max-width: 80px; /* Lebar maksimum batang */
+  height: 100%; /* Memastikan barGroup mengisi tinggi kontainer batangnya */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Memastikan batang bertumpuk berada di dasar */
+  text-align: center;
+  margin-left: 25px; /* Menambah margin untuk menjauhkan batang dari sumbu Y */
+}
+
+.stackedBar {
+  width: 100%;
+  height: 100%; /* Batang bertumpuk mengambil tinggi penuh barGroup */
+  display: flex;
+  flex-direction: column-reverse; /* Segmen ditumpuk dari bawah ke atas */
+  align-items: stretch; /* Segmen meregang penuh lebar batang */
+}
+
+.segment {
+  width: 100%;
+  /* Tinggi dan warna segmen diatur di JSX */
+}
+
+.segmentValue {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.barLabel {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column; /* Mengatur item legenda secara vertikal */
+  justify-content: center; /* <-- FIX: Memusatkan item legenda secara vertikal di dalam legend container */
+  align-items: flex-start; /* Sejajarkan teks legenda ke kiri */
+  flex-shrink: 0; /* Mencegah legenda menyusut */
+  width: auto; /* Lebar legenda ditentukan oleh kontennya */
+  min-width: 180px; /* Lebar minimum legenda */
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  /* max-width dihapus karena flex akan mengaturnya */
+  /* margin-top dan margin-left dihapus karena gap pada chartAndLegendWrapper */
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendColor {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block; /* <-- FIX: Pastikan ini adalah inline-block agar width/height bekerja */
+}
+
+.legendText {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Aturan Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+  .chartAndLegendWrapper {
+    flex-direction: column; /* Di layar kecil, tumpuk chart dan legend secara vertikal */
+    gap: 20px;
+  }
+  .chart {
+    width: 100%; /* Grafik mengambil lebar penuh */
+    max-width: none; /* Hapus batasan max-width */
+  }
+  .legend {
+    width: 100%; /* Legenda mengambil lebar penuh */
+    margin-left: 0; /* Menghapus margin kiri */
+    flex-direction: row; /* Item legenda kembali berjajar horizontal di mobile */
+    justify-content: center;
+    align-items: center;
+  }
+}

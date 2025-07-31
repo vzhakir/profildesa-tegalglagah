@@ -16,13 +16,16 @@
 .chart {
   display: flex;
   height: 300px;
+  width: 100%;
+  /* align-items: flex-end; <--- GARIS INI DIHAPUS */
 }
 .yAxis {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
-  padding-right: 10px;
+  padding-right: 15px;
+  height: 100%;
   border-right: 2px solid #e0e0e0;
   font-size: 0.9rem;
   color: #666;
@@ -31,8 +34,10 @@
   flex-grow: 1;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
-  padding-left: 10px;
+  align-items: flex-end; /* Batang sejajar di bagian bawah */
+  padding-left: 25px;
+  padding-bottom: 10px; /* Padding di bawah garis horizontal untuk label */
+  padding-top: 10px; /* Padding di atas untuk batang tertinggi */
   gap: 15px;
   border-bottom: 2px solid #e0e0e0;
 }
@@ -63,7 +68,7 @@
   font-size: 1rem;
 }
 .barLabel {
-  margin-top: 10px;
+  margin-top: 5px; /* Jarak antara batang dan label */
   font-size: 0.9rem;
   font-weight: 500;
   color: #555;
