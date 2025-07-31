@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/NavBar';
+import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import KondisiDesaPage from './components/KondisiDesaPage';
