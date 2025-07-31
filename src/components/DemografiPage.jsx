@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Demografi.module.css';
+import styles from './DemografiPage.module.css';
 import { kondisiDesa } from '../data/kondisiDesaData';
 
 function DemografiPage() {

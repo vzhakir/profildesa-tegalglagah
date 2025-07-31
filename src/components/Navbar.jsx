@@ -44,7 +44,7 @@ function Navbar() {
             Kondisi Desa <span className={styles.arrow}>▼</span>
           </NavLink>
           <ul className={styles.dropdownMenu}>
-            <li><Link to="/kondisi-desa/peta">Peta Desa</Link></li>
+            <li><Link to="/kondisi-desa/peta">Peta dan Wilayah Desa</Link></li>
             <li><Link to="/kondisi-desa/demografi">Demografi</Link></li>
             <li><Link to="/kondisi-desa/sosial">Keadaan Sosial</Link></li>
             <li><Link to="/kondisi-desa/ekonomi">Keadaan Ekonomi</Link></li>

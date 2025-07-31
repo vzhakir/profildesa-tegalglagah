@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import KondisiDesaPage from './components/KondisiDesaPage';
@@ -7,8 +7,8 @@ import Footer from './components/Footer';
 import SejarahPage from './components/SejarahPage';
 import VisiMisiPage from './components/VisiMisiPage';
 import StrukturOrganisasiPage from './components/StrukturOrganisasi';
-import DemografiPage from './components/Demografi';
-import PetaPage from './components/Peta';
+import DemografiPage from './components/DemografiPage';
+import PetaPage from './components/PetaPage';
 
 function App() {
   return (

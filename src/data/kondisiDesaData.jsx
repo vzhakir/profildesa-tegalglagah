@@ -30,9 +30,12 @@ export const kondisiDesa = {
         jenis: 'Tanah Fasilitas Umum', 
         luas: 25, 
         warna: '#FFC107', 
-        // KEMBALIKAN MENJADI STRING BIASA
         detail: 'Rincian: Tanah Bengkok (22,30 Ha), Perkantoran (1,10 Ha), Ruang Publik (0,06 Ha), Pemakaman (1,35 Ha), TPS (0,18 Ha), dan Sekolah (0,01 Ha).' 
       }
+    ],
+    tanamanPangan: [
+      { jenis: 'Bawang Merah', luas: 550.00, warna: '#E53935', detail: 'Komoditas utama pertanian desa.' },
+      { jenis: 'Lain-lain', luas: 44.80, warna: '#757575', detail: 'Tanaman pangan sekunder seperti padi dan jagung.' }
     ]
   },
   pendidikan: [
