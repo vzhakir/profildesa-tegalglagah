@@ -438,11 +438,107 @@ export const kondisiDesa = {
             { label: 'Jumlah pengurus', nilai: '15 orang' }
         ]},
         { kategori: 'Lembaga Pendidikan', data: [
-            { label: 'TK', nilai: '3 Unit', status: 'Terdaftar', pemilik: '5 Swasta, 1 Desa' },
-            { label: 'SD', nilai: '4 Unit', status: 'Terakreditasi', pemilik: '4 Pemerintah' },
-            { label: 'Sekolah Islam', nilai: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
-            { label: 'Ibtidayah', nilai: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
+            { nama: 'TK', jumlah: '3 Unit', status: 'Terdaftar', pemilik: '5 Swasta, 1 Desa' },
+            { nama: 'SD', jumlah: '4 Unit', status: 'Terakreditasi', pemilik: '4 Pemerintah' },
+            { nama: 'Sekolah Islam', jumlah: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
+            { nama: 'Ibtidayah', jumlah: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
+        ]},
+        { kategori: 'Lembaga Keamanan', data: [
+            { label: 'Hansip dan Linmas', nilai: 'Ada/Aktif' },
+            { label: 'Jumlah anggota Hansip', nilai: '24 orang' },
+            { label: 'Jumlah anggota Linmas', nilai: '22 orang' }
         ]}
-    ]
+    ],
+        prasaranaKomunikasi: [
+      {
+        kategori: 'Telepon',
+        subkategori: [
+          { label: 'Wartel/Warnet', nilai: 'Tidak ada' }
+        ],
+        tabel: {
+          headers: ['Layanan', 'Jumlah'],
+          rows: [
+            { layanan: 'Telkom', jumlah: '10'},
+            { layanan: 'GSM', jumlah: '2500' },
+            { layanan: 'CDMA', jumlah: '12'},
+          ]
+        }
+      },
+      {
+        kategori: 'Kantor Pos',
+        data: [
+          { label: 'Keberadaan', nilai: 'Tidak ada' },
+          { label: 'Tukang Pos', nilai: 'Tidak ada' }
+        ]
+      },
+      {
+        kategori: 'Radio/TV',
+        subkategori: [
+          { label: 'TV Umum', nilai: 'Tidak ada' }
+        ],
+        tabel: {
+          headers: ['Jenis', 'Jumlah'],
+          rows: [
+            { jenis: 'Jumlah Radio', jumlah: 'Tidak ada' },
+            { jenis: 'Jumlah TV', jumlah: '2250' },
+            { jenis: 'Jumlah Parabola', jumlah: '8' },
+          ]
+        }
+      },
+      {
+        kategori: 'Koran & Media Cetak',
+        data: [
+          { label: 'Koran', nilai: 'Tidak ada' },
+          { label: 'Papan Iklan', nilai: 'Tidak ada' },
+          { label: 'Papan Pengumuman', nilai: 'Tidak ada' },
+        ]
+      }
+    ],
+        airDanSanitasi: {
+      prasaranaAirBersih: [
+        { jenis: 'Sumur Pompa', jumlah: 2000, warna: '#29B6F6', detail: 'Sumber air utama yang menggunakan pompa listrik atau manual untuk warga.' },
+        { jenis: 'Sumur Gali', jumlah: 1600, warna: '#66BB6A', detail: 'Sumur tradisional yang digali secara manual sebagai alternatif sumber air.' },
+        { jenis: 'Tangki Air Bersih', jumlah: 500, warna: '#FFA726', detail: 'Digunakan untuk penampungan air bersih komunal di beberapa titik strategis.' }
+      ],
+      sanitasi: [
+        { label: 'Saluran Sanitasi', nilai: 'Tersedia' },
+        { label: 'Pemilik Jamban Keluarga', nilai: '1500 KK' }
+      ]
+    },
+        prasaranaLain: {
+      peribadatan: [
+        { label: 'Jumlah Masjid', nilai: '3 buah' },
+        { label: 'Jumlah Musholla/Surau', nilai: '33 buah' }
+      ],
+      olahraga: [
+        { label: 'Lapangan Bulutangkis', nilai: '1 buah' }
+      ],
+      kesehatan: {
+        prasarana: [
+          { jenis: 'Puskesmas', jumlah: 1, warna: '#EF5350', detail: 'Memberikan layanan kesehatan primer bagi masyarakat desa.' },
+          { jenis: 'Apotik', jumlah: 2, warna: '#42A5F5', detail: 'Menyediakan obat-obatan resep maupun non-resep.' },
+          { jenis: 'Posyandu', jumlah: 9, warna: '#66BB6A', detail: 'Layanan kesehatan ibu dan anak, tersebar di beberapa dusun.' }
+        ],
+        sarana: [
+          { jenis: 'Dukun Bersalin', jumlah: 4, warna: '#AB47BC', detail: 'Tenaga tradisional terlatih yang membantu proses persalinan.' },
+          { jenis: 'Bidan', jumlah: 5, warna: '#FFA726', detail: 'Tenaga medis profesional untuk kesehatan ibu dan anak.' },
+          { jenis: 'Perawat', jumlah: 4, warna: '#29B6F6', detail: 'Memberikan layanan perawatan kesehatan dasar kepada warga.' },
+          { jenis: 'Lainnya', jumlah: 1, warna: '#78909C', detail: 'Tenaga kesehatan pendukung lainnya.' }
+        ]
+      },
+      energi: [
+        { label: 'Listrik PLN', nilai: '3560 unit' },
+        { label: 'Diesel Umum', nilai: '50 unit' },
+        { label: 'Genset Pribadi', nilai: '4 unit' },
+        { label: 'Kayu Bakar', nilai: '35 keluarga' }
+      ],
+       kebersihan: [
+        { label: 'Tempat Pembuangan Akhir', nilai: '1 lokasi' },
+        { label: 'Gerobak Sampah', nilai: '2 unit' },
+        { label: 'Tong Sampah', nilai: '470 unit' },
+        { label: 'Satgas Kebersihan', nilai: '4 kelompok' },
+        { label: 'Anggota Satgas', nilai: '4 orang' }
+      ]
+    }
   }
 };

@@ -43,20 +43,23 @@
   gap: 15px;
 }
 
-/* --- Tata Letak Kolom Baru --- */
+/* --- Tata Letak Kolom --- */
 .columnsContainer {
     display: grid;
-    /* Membuat 3 kolom di layar lebar, dan akan menjadi 1 kolom di layar kecil */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    /* Ratakan item ke atas */
-    align-items: start;
+    align-items: stretch; /* Ubah agar item meregang */
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Jarak antar tabel dalam satu kolom */
+    gap: 30px;
+}
+
+.singleColumnContainer {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .tableContainer {
@@ -64,6 +67,23 @@
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .dataTable {
@@ -80,10 +100,16 @@
   border-bottom: 2px solid #ddd;
 }
 
+/* Menghilangkan header pada SimpleTableCard */
+.dataTable thead {
+  display: none;
+}
+
 .dataTable td {
   padding: 12px 15px;
   border-bottom: 1px solid #eee;
   font-size: 1rem;
+  color: #333;
 }
 
 .dataTable tr:last-child td {
@@ -93,21 +119,162 @@
 .dataTable td:first-child {
   font-weight: 600;
   color: #444;
-  width: 50%;
 }
 
-.dataTable td:last-child {
-  color: #666;
+/* --- Gaya Tabel Spesifik --- */
+.pendidikanTable thead, .customTable thead {
+  display: table-header-group; /* Tampilkan kembali header untuk tabel spesifik */
 }
 
-/* --- Gaya Khusus untuk Tabel Pendidikan --- */
-.pendidikanTable .subHeader th {
+.pendidikanTable .subHeader th,
+.customTable th {
     background-color: #fafafa;
     font-size: 0.9rem;
     font-weight: 600;
     color: #555;
 }
 
-.pendidikanTable td {
+.pendidikanTable td,
+.customTable td {
     text-align: left;
+}
+
+.customTable th, .customTable td {
+  padding: 10px 12px;
+}
+
+.subCategoryList {
+  padding: 0 15px 15px 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.subCategoryList p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* --- Gaya untuk Sesi dengan Chart --- */
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.chartSide {
+  flex: 1.5;
+  min-width: 450px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.tableSide {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mainChartTitle {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.chartVisualContainer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.chartInfoContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.chartLegend {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.legendItem:hover {
+  background-color: #f5f5f5;
+}
+
+.legendColor {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legendText {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.chartDetailContainer {
+  flex: 1.5;
+  min-width: 220px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartDetailBox {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  animation: fadeInDetail 0.3s ease;
+}
+
+@keyframes fadeInDetail {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chartDetailBox h3 {
+  margin: 0 0 8px 0;
+  color: #4CAF50;
+  font-size: 1.1rem;
+}
+
+.chartDetailBox p {
+  margin: 0;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.chartDetailPlaceholder {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
 }
