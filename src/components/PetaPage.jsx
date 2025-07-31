@@ -233,7 +233,7 @@ function PetaPage() {
 
       {/* Bagian Orbitasi dan Transportasi (Stacked Bar Chart) */}
       <div className={styles.iklimSection} ref={iklimSection5Ref}> {/* Tambahkan ref di sini */}
-        <h2 className={styles.sectionTitle}>Orbitasi dan Transportasi</h2>
+        <h2 className={styles.sectionTitle}>Transportasi</h2>
         <StackedBarChart
           data={stackedOrbitasiData}
           title="Total Kendaraan Umum"

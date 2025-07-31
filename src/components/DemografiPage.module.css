@@ -1,7 +1,7 @@
 /* src/components/Demografi.module.css */
 
 .pageContainer {
-  max-width: 900px;
+  max-width: 1200px; /* Lebar maksimum container utama */
   margin: 40px auto;
   padding: 20px;
   animation: fadeIn 0.5s ease-in-out;
@@ -114,15 +114,16 @@
 .legendText {
   display: flex;
   flex-direction: column;
+  color: #333; /* Warna teks utama legenda menjadi hitam */
 }
 
 .legendText strong {
   font-size: 1.2rem;
-  color: #333;
+  color: #333; /* Pastikan teks 'strong' juga hitam */
 }
 
 .legendText span {
-  color: #666;
+  color: #666; /* Warna teks sekunder legenda menjadi abu-abu */
 }
 
 /* TABEL DETAIL (sekarang diubah ke kartu) */
@@ -131,17 +132,22 @@
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 50px; /* Tambahkan margin agar ada jarak antar section */
 }
 
-.sectionTitle {
+.sectionTitle { /* Judul umum untuk section */
   text-align: center;
   font-size: 1.8rem;
   color: #333;
   margin-top: 0;
   margin-bottom: 25px;
+  display: flex; /* Untuk ikon di judul, seperti di KondisiDesaPage */
+  justify-content: center; /* Memusatkan teks dan ikon */
+  align-items: center;
+  gap: 10px; /* Jarak antara ikon dan teks */
 }
 
-/* NEW: Grid untuk Kartu Informasi */
+/* NEW: Grid untuk Kartu Informasi (KK & Kepadatan) */
 .infoCardsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -184,3 +190,265 @@
   margin-top: 8px;
   color: #666;
 }
+
+/* NEW: Gaya untuk bagian Distribusi Usia (2 Donut Charts) */
+.ageDistributionSection {
+  display: flex;
+  flex-wrap: wrap; /* Izinkan grafik wrap ke baris baru */
+  justify-content: center; /* Pusatkan grafik */
+  gap: 40px; /* Jarak antar grafik */
+  margin-top: 50px; /* Jarak dari section sebelumnya */
+  margin-bottom: 50px;
+}
+
+/* Re-use .lahanSection styles from PetaPage for consistent donut chart section styling */
+.lahanSection { /* Re-used from PetaPage for donut charts */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px; /* Memberikan jarak antar bagian */
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.lahanContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%; /* Penting untuk flex-basis anak-anaknya */
+}
+
+.lahanVisualContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1.5; /* Proporsi untuk chart */
+  min-width: 250px;
+}
+
+.lahanInfoContainer {
+  flex: 1; /* Proporsi untuk info/legend */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lahanLegend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.lahanLegend .legendText {
+  color: #333; /* Teks legenda di lahanSection juga hitam */
+}
+
+.lahanDetailContainer {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lahanDetailBox {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  animation: fadeInDetail 0.3s ease;
+}
+
+@keyframes fadeInDetail {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lahanDetailBox h3 {
+  margin: 0 0 10px 0 !important;
+  color: #4CAF50 !important;
+  border-bottom: 1px solid #555 !important;
+  padding-bottom: 8px !important;
+  font-size: 1.2rem !important;
+}
+
+.lahanDetailBox p {
+  margin: 0 !important;
+  color: #f0f0f0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+.lahanDetailPlaceholder {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+.sectionIcon { /* Gaya untuk ikon di judul section */
+  font-size: 1.8rem; /* Sesuaikan dengan font-size judul */
+  color: #4CAF50;
+  margin-right: 5px; /* Jarak antara ikon dan teks judul */
+}
+
+/* Detail list untuk lahan */
+.detailListContainer {
+  text-align: left;
+}
+
+.detailTitle {
+  margin: 0 0 8px 0 !important;
+  font-weight: 500;
+  color: #f0f0f0 !important;
+}
+
+.detailList {
+  list-style-position: inside;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.detailList li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.detailList li:last-child {
+  margin-bottom: 0;
+}
+
+.iklimCard {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-bottom: 5px solid #4CAF50;
+  transition: transform 0.3s ease;
+}
+
+.iklimCard:hover {
+  transform: translateY(-5px);
+}
+
+.iklimIcon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.iklimValue {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.iklimUnit {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #666;
+  margin-left: 8px;
+}
+
+.iklimLabel {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 10px 0 0 0;
+}
+
+.tanahValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/* NEW: Gaya untuk container grid baru untuk donut charts pendidikan */
+.educationDonutGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Ubah minmax untuk lebar yang pas */
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+/* NEW: Gaya untuk item donat pendidikan (reuse lahanSection tapi override untuk grid) */
+.educationDonutItem {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 15px !important; /* Kurangi padding */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  background-color: #fff !important;
+  border: 1px solid #eee; /* Tambahkan border */
+  border-radius: 8px;
+}
+
+.educationDonutItem .sectionTitle { /* Judul di dalam item grid */
+  font-size: 1.4rem; /* Lebih kecil dari judul section utama */
+  margin-bottom: 15px;
+}
+
+.educationDonutItem .lahanContent {
+  flex-direction: column; /* Konten di dalam item donut tumpuk vertikal */
+  gap: 15px;
+}
+
+.educationDonutItem .lahanVisualContainer {
+  width: 100%;
+  min-width: 0; /* Biarkan menyusut */
+  flex: none; /* Hapus flex-basis */
+}
+
+.educationDonutItem .lahanInfoContainer {
+  flex: 1; /* Proporsi untuk info/legend */
+  min-width: 0; /* Biarkan menyusut */
+  flex: none; /* Hapus flex-basis */
+}
+
+.educationDonutItem .lahanLegend {
+  gap: 10px; /* Kurangi gap legenda */
+}
+
+.educationDonutItem .legendItem {
+  gap: 8px; /* Kurangi gap item legenda */
+  padding: 5px 8px; /* Kurangi padding item legenda */
+}
+
+.educationDonutItem .legendColor {
+  width: 16px; /* Sesuaikan ukuran kotak warna */
+  height: 16px;
+}
+
+.educationDonutItem .legendText {
+  font-size: 0.85rem; /* Sesuaikan ukuran font teks legenda */
+}
+
+.educationDonutItem .lahanDetailContainer {
+  min-height: 80px; /* Kurangi tinggi detail container */
+}
+
+.educationDonutItem .lahanDetailBox {
+  padding: 10px; /* Kurangi padding detail box */
+}
+
+/* Re-gunakan gaya .stackedBarChartContainer untuk agama */
+.stackedBarChartContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ini akan bekerja untuk 3 kolom */
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+/* ... (Gaya untuk .gridVariant di StackedBarChart.module.css yang sudah ada) ... */

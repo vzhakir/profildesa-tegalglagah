@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './StackedBarChart.module.css';
 
-const StackedBarChart = ({ data, title }) => {
+const StackedBarChart = ({ data, title, isGridItem }) => { // Terima isGridItem
   if (!data || !data.segments || data.segments.length === 0) {
     return <div className={styles.outerContainer}><p>Tidak ada data untuk ditampilkan.</p></div>;
   }
@@ -10,10 +10,10 @@ const StackedBarChart = ({ data, title }) => {
   const categoryLabel = data.category;
 
   return (
-    <div className={styles.outerContainer}> {/* Kontainer terluar untuk judul + chart/legend */}
-      {title && <h3 className={styles.chartTitle}>{title}</h3>} {/* Judul grafik di sini */}
+    <div className={`${styles.outerContainer} ${isGridItem ? styles.gridVariant : ''}`}> {/* Tambahkan class gridVariant */}
+      {title && <h3 className={styles.chartTitle}>{title}</h3>}
       
-      <div className={styles.chartAndLegendWrapper}> {/* Pembungkus untuk grafik dan legenda */}
+      <div className={styles.chartAndLegendWrapper}>
         <div className={styles.chart}>
           {/* Y-Axis */}
           <div className={styles.yAxis}>
@@ -52,7 +52,7 @@ const StackedBarChart = ({ data, title }) => {
             <div key={index} className={styles.legendItem}>
               <span className={styles.legendColor} style={{ backgroundColor: segment.color }}></span>
               <span className={styles.legendText}>
-                {segment.legendTextDisplay ? segment.legendTextDisplay : `${segment.label} (${segment.value})`} {/* <-- UBAH DI SINI */}
+                {segment.legendTextDisplay ? segment.legendTextDisplay : `${segment.label} (${segment.value})`}
               </span>
             </div>
           ))}
