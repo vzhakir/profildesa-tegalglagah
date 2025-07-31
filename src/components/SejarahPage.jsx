@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './SejarahPage.module.css';
+import PageNavigator from './PageNavigator'; // Impor komponen navigasi
 
 function SejarahPage() {
   return (
@@ -16,6 +17,11 @@ function SejarahPage() {
           Seiring berjalannya waktu, Desa Tebing Tinggi berkembang pesat. Sektor pertanian, khususnya kelapa sawit dan karet, menjadi tulang punggung perekonomian desa. Generasi penerus terus melanjutkan perjuangan para pendahulu, memajukan desa melalui pendidikan, teknologi, dan pelestarian budaya lokal.
         </p>
       </div>
+
+      {/* Tambahkan navigator di sini */}
+      <PageNavigator
+        nextLink={{ path: '/profil/visi-misi', title: 'Visi & Misi' }}
+      />
     </div>
   );
 }

@@ -1,7 +1,6 @@
-// src/components/VisiMisiPage.jsx
-
 import React from 'react';
 import styles from './VisiMisiPage.module.css';
+import PageNavigator from './PageNavigator'; // Impor komponen navigasi
 
 function VisiMisiPage() {
   return (
@@ -25,6 +24,12 @@ function VisiMisiPage() {
           <li>Memperkuat kehidupan sosial kemasyarakatan yang rukun, agamis, dan berlandaskan pada nilai-nilai budaya luhur.</li>
         </ol>
       </div>
+
+      {/* Tambahkan navigator di sini */}
+      <PageNavigator
+        prevLink={{ path: '/profil/sejarah', title: 'Sejarah Desa' }}
+        nextLink={{ path: '/profil/struktur-organisasi', title: 'Struktur Organisasi' }}
+      />
     </div>
   );
 }

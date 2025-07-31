@@ -5,8 +5,7 @@ import styles from './HomePage.module.css'; // Kita akan buat file CSS ini
 // Import gambar dari folder assets
 import HeroBackground from '../assets/herobg.jpg';
 import IconPertanian from '../assets/shallots.svg';
-import IconPeternakan from '../assets/farm.svg';
-import IconKerajinan from '../assets/craft.svg';
+import IconPeternakan from '../assets/farm.svg';4
 
 
 function HomePage() {
@@ -31,7 +30,7 @@ function HomePage() {
           <p className={styles.heroDescription}>
             Kecamatan Bulakamba, Kabupaten Brebes, Provinsi Jawa Tengah
           </p>
-          <Link to="/profil" className={styles.ctaButton}>
+          <Link to="/profil/sejarah" className={styles.ctaButton}>
             LIHAT PROFIL &gt;
           </Link>
         </div>

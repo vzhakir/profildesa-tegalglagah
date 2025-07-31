@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ProfilePage.module.css'; // Impor file CSS
-import { dataProfil } from '../data/profil'; // Impor data dari file
+import { dataProfil } from '../data/kondisiDesaData'; // Impor data dari file
 
 function ProfilePage() {
   return (
