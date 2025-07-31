@@ -1,3 +1,5 @@
+/* src/components/StrukturOrganisasi.module.css */
+
 .pageContainer {
   max-width: 1200px;
   margin: 40px auto;
@@ -51,7 +53,7 @@
   border: 5px solid #4CAF50;
 }
 
-/* --- Bagian Perangkat Desa --- */
+/* --- Bagian Perangkat Desa & Kepala Dusun --- */
 .sectionTitle {
   text-align: center;
   font-size: 2rem;
@@ -59,9 +61,10 @@
   margin-bottom: 30px;
 }
 
+/* Class ini akan memaksa 5 kolom yang terlihat semua tanpa scroll */
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* <-- UBAH DI SINI */
   gap: 30px;
   justify-content: center;
 }

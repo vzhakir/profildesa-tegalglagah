@@ -1,42 +1,26 @@
 import React from 'react';
 import styles from './StrukturOrganisasi.module.css';
-
-const perangkatDesa = [
-  {
-    jabatan: 'Kepala Desa',
-    nama: 'H. Abdul Ghofur',
-    foto: 'https://via.placeholder.com/150',
-  },
-  {
-    jabatan: 'Sekretaris Desa',
-    nama: 'Ahmad Mubarok, S.Kom',
-    foto: 'https://via.placeholder.com/150',
-  },
-  {
-    jabatan: 'Kasi Pemerintahan',
-    nama: 'Sri Wahyuni, S.Pd',
-    foto: 'https://via.placeholder.com/150',
-  },
-  {
-    jabatan: 'Kasi Kesejahteraan',
-    nama: 'Muhammad Zaki',
-    foto: 'https://via.placeholder.com/150',
-  },
-  {
-    jabatan: 'Kaur Perencanaan',
-    nama: 'Siti Aminah',
-    foto: 'https://via.placeholder.com/150',
-  },
-  {
-    jabatan: 'Kaur Keuangan',
-    nama: 'Budi Santoso',
-    foto: 'https://via.placeholder.com/150',
-  },
-];
+import { kondisiDesa } from '../data/kondisiDesaData';
+import { FaUserCircle } from 'react-icons/fa';
 
 function StrukturOrganisasiPage() {
+  const perangkatDesa = kondisiDesa.strukturOrganisasi.perangkatDesa;
   const kepalaDesa = perangkatDesa.find(p => p.jabatan === 'Kepala Desa');
-  const perangkatLainnya = perangkatDesa.filter(p => p.jabatan !== 'Kepala Desa');
+  const kepalaDusun = perangkatDesa.filter(p => p.jabatan.startsWith('Kepala Dusun'));
+  const perangkatLainnya = perangkatDesa.filter(p =>
+    p.jabatan !== 'Kepala Desa' && !p.jabatan.startsWith('Kepala Dusun')
+  );
+
+  const iconStyle = {
+    fontSize: '80px',
+    color: '#777',
+    marginBottom: '10px',
+  };
+
+  const kepalaDesaIconStyle = {
+    ...iconStyle,
+    fontSize: '120px',
+  };
 
   return (
     <div className={styles.pageContainer}>
@@ -49,7 +33,7 @@ function StrukturOrganisasiPage() {
       {kepalaDesa && (
         <div className={styles.kepalaDesaSection}>
           <div className={styles.kepalaDesaCard}>
-            <img src={kepalaDesa.foto} alt={`Foto ${kepalaDesa.nama}`} className={styles.kepalaDesaFoto} />
+            <FaUserCircle style={kepalaDesaIconStyle} alt={`Foto ${kepalaDesa.nama}`} className={styles.kepalaDesaFoto} />
             <h2 className={styles.nama}>{kepalaDesa.nama}</h2>
             <p className={styles.jabatan}>{kepalaDesa.jabatan}</p>
           </div>
@@ -59,12 +43,27 @@ function StrukturOrganisasiPage() {
       {/* Garis pemisah */}
       <hr className={styles.separator} />
 
-      {/* Perangkat Desa Lainnya */}
+      {/* Bagian Kepala Dusun menggunakan grid yang responsif */}
+      <h2 className={styles.sectionTitle}>Kepala Dusun</h2>
+      <div className={styles.gridContainer}> {/* <-- KEMBALI MENGGUNAKAN gridContainer */}
+        {kepalaDusun.map((item) => (
+          <div key={item.jabatan} className={styles.card}>
+            <FaUserCircle style={iconStyle} alt={`Foto ${item.nama}`} className={styles.foto} />
+            <h3 className={styles.nama}>{item.nama}</h3>
+            <p className={styles.jabatan}>{item.jabatan}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Garis pemisah */}
+      <hr className={styles.separator} />
+
+      {/* Perangkat Desa Lainnya tetap menggunakan grid */}
       <h2 className={styles.sectionTitle}>Perangkat Desa</h2>
       <div className={styles.gridContainer}>
         {perangkatLainnya.map((item) => (
           <div key={item.jabatan} className={styles.card}>
-            <img src={item.foto} alt={`Foto ${item.nama}`} className={styles.foto} />
+            <FaUserCircle style={iconStyle} alt={`Foto ${item.nama}`} className={styles.foto} />
             <h3 className={styles.nama}>{item.nama}</h3>
             <p className={styles.jabatan}>{item.jabatan}</p>
           </div>

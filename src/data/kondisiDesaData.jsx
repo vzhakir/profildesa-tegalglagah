@@ -139,8 +139,8 @@ export const kondisiDesa = {
       {
         category: 'Jawa',
         segments: [
-          { label: 'Laki-laki', value: 8390, color: '#42A5F5' }, // Ubah warna agar konsisten dengan gender
-          { label: 'Perempuan', value: 7883, color: '#FF7043' }  // Ubah warna agar konsisten dengan gender
+          { label: 'Laki-laki', value: 8390, color: '#42A5F5' },
+          { label: 'Perempuan', value: 7883, color: '#FF7043' }
         ]
       },
       {
@@ -217,7 +217,6 @@ export const kondisiDesa = {
       }
     ]
   },
-
    wilayah: {
     luas: "748,65 Ha",
     batasUtara: ["Petunjungan, Bulakamba", "Dukuhwringin, Slawi"],
@@ -310,4 +309,68 @@ export const kondisiDesa = {
     { jenis: "Olahraga", nama: "Lapangan Voli", jumlah: 2 },
     { jenis: "Umum", nama: "Balai Desa", jumlah: 1 },
   ],
+  strukturOrganisasi: {
+    perangkatDesa: [
+      {
+        jabatan: 'Kepala Desa',
+        nama: 'Wahyono, S.T.',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Sekretaris Desa',
+        nama: 'Janudin',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kasi Pemerintahan',
+        nama: 'Trio Hariawan',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kasi Kesejahteraan',
+        nama: 'Tanuri',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kaur Perencanaan',
+        nama: 'Ervina E.R., S.E.',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kaur Keuangan',
+        nama: 'Koerul Umam',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kaur Layanan',
+        nama: 'Kasori',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kepala Dusun 1',
+        nama: 'Dian Nurarifah',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kepala Dusun 2',
+        nama: 'Winarko',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kepala Dusun 3',
+        nama: 'Moh. Yahya',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kepala Dusun 4',
+        nama: 'Wakmad',
+        foto: 'https://via.placeholder.com/150',
+      },
+      {
+        jabatan: 'Kepala Dusun 5',
+        nama: 'Mustopa Amin',
+        foto: 'https://via.placeholder.com/150',
+      },
+    ],
+  },
 };
