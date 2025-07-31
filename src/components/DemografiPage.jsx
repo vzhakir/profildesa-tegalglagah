@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import styles from './DemografiPage.module.css';
 import { kondisiDesa } from '../data/kondisiDesaData';
-import { FaHome, FaUsers, FaMale, FaFemale } from 'react-icons/fa'; // Pastikan FaMale dan FaFemale diimpor
+import { FaHome, FaUsers, FaMale, FaFemale } from 'react-icons/fa';
 import DonutChart from './DonutChart';
-// Hapus import IndividualDonutChartSection dari sini jika ada
+import PageNavigator from './PageNavigator';
 
 function DemografiPage() {
-  const { pria, wanita, jumlahPenduduk, jumlahKK, kepadatanPenduduk, usia } = kondisiDesa.demografi; // Pastikan 'usia' diimpor
-  const { maleAgeDistribution, femaleAgeDistribution } = usia; // Pastikan ini ada
-
+  const { pria, wanita, jumlahPenduduk, jumlahKK, kepadatanPenduduk, usia } = kondisiDesa.demografi;
+  const { maleAgeDistribution, femaleAgeDistribution } = usia;
   const persentasePria = ((pria / jumlahPenduduk) * 100).toFixed(1);
   const persentaseWanita = ((wanita / jumlahPenduduk) * 100).toFixed(1);
 
-  // Fungsi helper RenderIndividualDonutChartSection yang diduplikasikan
   const RenderIndividualDonutChartSection = ({ title, dataSegmentsArray, icon, disableLegendHover = false }) => {
-    const [hoveredData, setHoveredData] = useState(null); // State lokal untuk setiap instansi chart
-
+    const [hoveredData, setHoveredData] = useState(null);
     const donutChartData = dataSegmentsArray.map(s => ({
       jenis: s.jenis || s.label,
       luas: s.luas || s.value,
@@ -74,7 +71,6 @@ function DemografiPage() {
     );
   };
 
-
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}>Demografi Desa</h1>
@@ -82,7 +78,6 @@ function DemografiPage() {
         Visualisasi dan rincian data kependudukan Desa Tegalglagah.
       </p>
 
-      {/* Kontainer untuk menampung grafik utama dan legenda */}
       <div className={styles.chartSection}>
         <div
           className={styles.donutChart}
@@ -95,7 +90,6 @@ function DemografiPage() {
           </div>
         </div>
 
-        {/* Legenda untuk grafik utama */}
         <div className={styles.legend}>
           <div className={styles.legendItem}>
             <span className={`${styles.legendColor} ${styles.colorPria}`}></span>
@@ -114,7 +108,6 @@ function DemografiPage() {
         </div>
       </div>
 
-      {/* Bagian Grafik Distribusi Usia - DIKEMBALIKAN KE SINI */}
       <div className={styles.ageDistributionSection}>
         <RenderIndividualDonutChartSection
           title='Distribusi Usia Laki-laki'
@@ -130,7 +123,6 @@ function DemografiPage() {
         />
       </div>
 
-      {/* Bagian Kartu Rincian Data */}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Rincian Data</h2>
         <div className={styles.infoCardsGrid}>
@@ -147,6 +139,11 @@ function DemografiPage() {
           </div>
         </div>
       </div>
+
+      <PageNavigator
+        prevLink={{ path: '/kondisi-desa/peta', title: 'Peta dan Wilayah' }}
+        nextLink={{ path: '/kondisi-desa/sosial', title: 'Keadaan Sosial' }}
+      />
     </div>
   );
 }

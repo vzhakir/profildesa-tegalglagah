@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import styles from './KeadaanSosialPage.module.css';
 import { kondisiDesa } from '../data/kondisiDesaData';
 import DonutChart from './DonutChart';
-import StackedBarChart from './StackedBarChart'; // Masih dibutuhkan untuk agama
-import { FaGraduationCap, FaPray, FaUsers, FaWheelchair }
-from 'react-icons/fa';
+import StackedBarChart from './StackedBarChart';
+import { FaGraduationCap, FaPray, FaUsers, FaWheelchair } from 'react-icons/fa';
+import PageNavigator from './PageNavigator';
 
 function KeadaanSosialPage() {
   const { educationDistribution, religionCombinedDistribution, etnis, disabilitas } = kondisiDesa.demografi;
 
-  // Fungsi helper RenderIndividualDonutChartSection (tetap di sini)
   const RenderIndividualDonutChartSection = ({ title, dataSegmentsArray, icon, disableLegendHover = false }) => {
     const [hoveredData, setHoveredData] = useState(null);
-
     const donutChartData = dataSegmentsArray.map(s => ({
       jenis: s.jenis || s.label,
       luas: s.luas || s.value,
@@ -71,7 +69,6 @@ function KeadaanSosialPage() {
     );
   };
 
-
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}>Keadaan Sosial Desa</h1>
@@ -79,7 +76,6 @@ function KeadaanSosialPage() {
         Informasi mengenai kondisi sosial, pendidikan, dan agama penduduk Desa Tegalglagah.
       </p>
 
-      {/* Bagian Grafik Distribusi Pendidikan */}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}><FaGraduationCap /> Distribusi Pendidikan</h2>
         <div className={styles.educationDonutGridContainer}>
@@ -94,7 +90,6 @@ function KeadaanSosialPage() {
         </div>
       </div>
 
-      {/* Bagian Grafik Distribusi Agama (Satu Stacked Bar Chart yang digabung) */}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}><FaPray /> Distribusi Agama</h2>
         <div className={styles.stackedBarChartContainer}>
@@ -106,14 +101,13 @@ function KeadaanSosialPage() {
         </div>
       </div>
 
-      {/* Bagian Distribusi Etnis (Diubah menjadi Donut Charts) */}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}><FaUsers /> Distribusi Etnis</h2>
-        <div className={styles.educationDonutGridContainer}> {/* <-- UBAH: Gunakan educationDonutGridContainer */}
+        <div className={styles.educationDonutGridContainer}>
           {etnis.map((item, index) => {
             const totalValue = item.segments.reduce((sum, seg) => sum + seg.value, 0);
             return totalValue > 0 ? (
-              <RenderIndividualDonutChartSection // <-- UBAH: Gunakan RenderIndividualDonutChartSection
+              <RenderIndividualDonutChartSection
                 key={index}
                 title={item.category}
                 dataSegmentsArray={item.segments}
@@ -124,7 +118,6 @@ function KeadaanSosialPage() {
         </div>
       </div>
 
-      {/* Bagian Distribusi Disabilitas (Tetap Donut Charts) */}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}><FaWheelchair /> Distribusi Disabilitas</h2>
         <div className={styles.educationDonutGridContainer}>
@@ -142,6 +135,10 @@ function KeadaanSosialPage() {
         </div>
       </div>
 
+      <PageNavigator
+        prevLink={{ path: '/kondisi-desa/demografi', title: 'Demografi' }}
+        nextLink={{ path: '/kondisi-desa/ekonomi', title: 'Keadaan Ekonomi' }}
+      />
     </div>
   );
 }

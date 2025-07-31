@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; // Import useEffect dan useRef
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './PetaPage.module.css';
 import {
   FaMapMarkedAlt, FaChartArea, FaCloudShowersHeavy, FaTemperatureHigh, FaWater,
@@ -6,10 +6,9 @@ import {
 } from 'react-icons/fa';
 import petaDesaImage from '../assets/peta.jpg';
 import { kondisiDesa } from '../data/kondisiDesaData';
-
 import DonutChart from './DonutChart';
-import BarChart from './BarChart';
 import StackedBarChart from './StackedBarChart';
+import PageNavigator from './PageNavigator';
 
 function PetaPage() {
   const {
@@ -48,7 +47,6 @@ function PetaPage() {
     </div>
   );
 
-  // Buat ref untuk setiap bagian yang ingin dianimasikan
   const statGridRef = useRef(null);
   const mapContainerRef = useRef(null);
   const batasSectionRef = useRef(null);
@@ -60,26 +58,23 @@ function PetaPage() {
   const iklimSection4Ref = useRef(null);
   const iklimSection5Ref = useRef(null);
 
-
   useEffect(() => {
     const observerOptions = {
-      root: null, // Mengamati dari viewport
+      root: null,
       rootMargin: '0px',
-      threshold: 0.1 // Ketika 10% elemen terlihat
+      threshold: 0.1
     };
 
     const observerCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add(styles.isVisible); // Tambahkan class isVisible
-          observer.unobserve(entry.target); // Hentikan observasi setelah terlihat
+          entry.target.classList.add(styles.isVisible);
+          observer.unobserve(entry.target);
         }
       });
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Amati setiap elemen
     const elementsToObserve = [
       statGridRef.current,
       mapContainerRef.current,
@@ -92,26 +87,23 @@ function PetaPage() {
       iklimSection4Ref.current,
       iklimSection5Ref.current,
     ];
-
     elementsToObserve.forEach(el => {
       if (el) observer.observe(el);
     });
 
-    // Cleanup observer saat komponen di-unmount
     return () => {
       elementsToObserve.forEach(el => {
         if (el) observer.unobserve(el);
       });
     };
-  }, []); // Hanya dijalankan sekali saat mount
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.pageTitle}><FaMapMarkedAlt /> Peta dan Wilayah Desa</h1>
       <p className={styles.pageSubtitle}>Data Administratif, Luas, Batas Wilayah, Iklim, dan Orbitasi Desa Tegalglagah.</p>
 
-      {/* Bagian Statistik Luas Wilayah */}
-      <div className={styles.statGrid} ref={statGridRef}> {/* Tambahkan ref di sini */}
+      <div className={styles.statGrid} ref={statGridRef}>
         <div className={`${styles.statCard} ${styles.totalCard}`}>
           <div className={styles.statIcon}><FaChartArea /></div>
           <div className={styles.statValueContainer}><span className={styles.statValue}>{luasValue}</span><span className={styles.statUnit}>{luasUnit}</span></div>
@@ -126,12 +118,10 @@ function PetaPage() {
         ))}
       </div>
       
-      {/* Bagian Peta & Batas Wilayah */}
       <div className={styles.mapContainer} ref={mapContainerRef}><img src={petaDesaImage} alt="Peta Desa Tegalglagah" className={styles.mapImage} /></div>
       <div className={styles.batasSection} ref={batasSectionRef}><h2 className={styles.sectionTitle}>Batas-Batas Wilayah</h2><div className={styles.batasGrid}>{renderBatasCard('Utara', batasUtara)}{renderBatasCard('Timur', batasTimur)}{renderBatasCard('Selatan', batasSelatan)}{renderBatasCard('Barat', batasBarat)}</div></div>
 
-      {/* Bagian Penggunaan Lahan (Donut Chart) */}
-      <div className={styles.lahanSection} ref={lahanSection1Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.lahanSection} ref={lahanSection1Ref}>
         <h2 className={styles.sectionTitle}>Luas Wilayah Menurut Penggunaan</h2>
         <div className={styles.lahanContent}>
           <div className={styles.lahanVisualContainer}><DonutChart data={penggunaanLahan} onSliceHover={setHoveredLahan} /></div>
@@ -142,8 +132,7 @@ function PetaPage() {
         </div>
       </div>
 
-      {/* Bagian Penggunaan Lahan Tanaman Pangan (Donut Chart Baru) */}
-      <div className={styles.lahanSection} ref={lahanSection2Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.lahanSection} ref={lahanSection2Ref}>
         <h2 className={styles.sectionTitle}>Luas Lahan untuk Tanaman Pangan</h2>
         <div className={styles.lahanContent}>
           <div className={styles.lahanVisualContainer}>
@@ -179,9 +168,7 @@ function PetaPage() {
         </div>
       </div>
 
-
-      {/* Bagian Iklim */}
-      <div className={styles.iklimSection} ref={iklimSection1Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.iklimSection} ref={iklimSection1Ref}>
         <h2 className={styles.sectionTitle}>Informasi Iklim</h2>
         <div className={styles.iklimGrid}>
           <div className={styles.iklimCard}><div className={styles.iklimIcon}><FaCloudShowersHeavy /></div><div className={styles.iklimValue}>{iklim.bulanHujan}<span className={styles.iklimUnit}>Bulan</span></div><p className={styles.iklimLabel}>Jumlah Bulan Hujan</p></div>
@@ -190,8 +177,7 @@ function PetaPage() {
         </div>
       </div>
 
-      {/* Bagian Tanah */}
-      <div className={styles.iklimSection} ref={iklimSection2Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.iklimSection} ref={iklimSection2Ref}>
         <h2 className={styles.sectionTitle}>Karakteristik Tanah</h2>
         <div className={styles.iklimGrid}>
           <div className={styles.iklimCard}><div className={styles.iklimIcon}><FaPalette /></div><div className={styles.tanahValue}>{tanah.warna}</div><p className={styles.iklimLabel}>Warna Tanah Dominan</p></div>
@@ -200,8 +186,7 @@ function PetaPage() {
         </div>
       </div>
 
-      {/* Bagian Jarak Orbitasi */}
-      <div className={styles.iklimSection} ref={iklimSection3Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.iklimSection} ref={iklimSection3Ref}>
         <h2 className={styles.sectionTitle}>Jarak Orbitasi</h2>
         <div className={styles.iklimGrid}>
           <div className={styles.iklimCard}>
@@ -222,8 +207,7 @@ function PetaPage() {
         </div>
       </div>
 
-      {/* Bagian Sumur Pompa (Stacked Bar Chart) */}
-      <div className={styles.iklimSection} ref={iklimSection4Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.iklimSection} ref={iklimSection4Ref}>
         <h2 className={styles.sectionTitle}>Data Sumur Pompa</h2>
         <StackedBarChart
           data={stackedSumurPompaData}
@@ -231,14 +215,17 @@ function PetaPage() {
         />
       </div>
 
-      {/* Bagian Orbitasi dan Transportasi (Stacked Bar Chart) */}
-      <div className={styles.iklimSection} ref={iklimSection5Ref}> {/* Tambahkan ref di sini */}
+      <div className={styles.iklimSection} ref={iklimSection5Ref}>
         <h2 className={styles.sectionTitle}>Transportasi</h2>
         <StackedBarChart
           data={stackedOrbitasiData}
           title="Total Kendaraan Umum"
         />
       </div>
+
+      <PageNavigator
+        nextLink={{ path: '/kondisi-desa/demografi', title: 'Demografi' }}
+      />
     </div>
   );
 }
