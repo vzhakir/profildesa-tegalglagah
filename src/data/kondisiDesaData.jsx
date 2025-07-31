@@ -1,3 +1,19 @@
+// --- DATA PROFIL (SEJARAH, VISI, MISI) ---
+export const dataProfil = {
+  sejarah: "Desa Tebing Tinggi, yang terletak di Kecamatan Benai, memiliki sejarah panjang yang berakar dari semangat gotong royong para perintisnya. Didirikan secara resmi pada tahun 1982, desa ini merupakan hasil dari program transmigrasi pemerintah yang bertujuan untuk meratakan persebaran penduduk dan membuka lahan-lahan baru untuk pertanian.",
+  
+  visi: "Terwujudnya Desa Tebing Tinggi yang Maju, Mandiri, Sejahtera, dan Berakhlak Mulia melalui Peningkatan Kualitas Sumber Daya Manusia dan Pemanfaatan Potensi Lokal yang Berkelanjutan.",
+  
+  misi: [
+    "Meningkatkan kualitas penyelenggaraan pemerintahan desa yang bersih, transparan, dan akuntabel.",
+    "Mengembangkan kualitas sumber daya manusia (SDM) melalui peningkatan akses dan mutu pendidikan serta kesehatan.",
+    "Meningkatkan produktivitas perekonomian desa dengan mengoptimalkan potensi pertanian, perkebunan, dan UMKM lokal.",
+    "Membangun dan meningkatkan kualitas infrastruktur dasar desa yang merata dan berwawasan lingkungan.",
+    "Memperkuat kehidupan sosial kemasyarakatan yang rukun, agamis, dan berlandaskan pada nilai-nilai budaya luhur."
+  ]
+};
+
+// --- DATA KONDISI DESA (DEMOGRAFI, WILAYAH, DLL.) ---
 export const kondisiDesa = {
   demografi: {
     jumlahPenduduk: 16273,
@@ -217,6 +233,7 @@ export const kondisiDesa = {
       }
     ]
   },
+
    wilayah: {
     luas: "748,65 Ha",
     batasUtara: ["Petunjungan, Bulakamba", "Dukuhwringin, Slawi"],
@@ -314,77 +331,118 @@ export const kondisiDesa = {
       {
         jabatan: 'Kepala Desa',
         nama: 'Wahyono, S.T.',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Sekretaris Desa',
         nama: 'Janudin',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kasi Pemerintahan',
         nama: 'Trio Hariawan',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kasi Kesejahteraan',
         nama: 'Tanuri',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kaur Perencanaan',
         nama: 'Ervina E.R., S.E.',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kaur Keuangan',
         nama: 'Koerul Umam',
-        foto: 'https://via.placeholder.com/150',
       },
-      {
+       {
         jabatan: 'Kaur Layanan',
         nama: 'Kasori',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kepala Dusun 1',
         nama: 'Dian Nurarifah',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kepala Dusun 2',
         nama: 'Winarko',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kepala Dusun 3',
         nama: 'Moh. Yahya',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kepala Dusun 4',
         nama: 'Wakmad',
-        foto: 'https://via.placeholder.com/150',
       },
       {
         jabatan: 'Kepala Dusun 5',
         nama: 'Mustopa Amin',
-        foto: 'https://via.placeholder.com/150',
       },
-    ],
+    ]
   },
-};
-
-export const dataProfil = {
-  sejarah: "Desa Tebing Tinggi, yang terletak di Kecamatan Benai, memiliki sejarah panjang yang berakar dari semangat gotong royong para perintisnya. Didirikan secara resmi pada tahun 1982, desa ini merupakan hasil dari program transmigrasi pemerintah yang bertujuan untuk meratakan persebaran penduduk dan membuka lahan-lahan baru untuk pertanian.",
-  
-  visi: "Terwujudnya Desa Tebing Tinggi yang Maju, Mandiri, Sejahtera, dan Berakhlak Mulia melalui Peningkatan Kualitas Sumber Daya Manusia dan Pemanfaatan Potensi Lokal yang Berkelanjutan.",
-  
-  misi: [
-    "Meningkatkan kualitas penyelenggaraan pemerintahan desa yang bersih, transparan, dan akuntabel.",
-    "Mengembangkan kualitas sumber daya manusia (SDM) melalui peningkatan akses dan mutu pendidikan serta kesehatan.",
-    "Meningkatkan produktivitas perekonomian desa dengan mengoptimalkan potensi pertanian, perkebunan, dan UMKM lokal.",
-    "Membangun dan meningkatkan kualitas infrastruktur dasar desa yang merata dan berwawasan lingkungan.",
-    "Memperkuat kehidupan sosial kemasyarakatan yang rukun, agamis, dan berlandaskan pada nilai-nilai budaya luhur."
-  ]
+  ekonomi: {
+    tenagaKerjaPria: [
+        { jenis: 'Usia 0-6', luas: 325, warna: '#64B5F6', detail: 'Anak-anak yang belum memasuki usia sekolah.' },
+        { jenis: 'Usia 7-18 (Sekolah)', luas: 425, warna: '#42A5F5', detail: 'Siswa yang sedang menempuh pendidikan formal.' },
+        { jenis: 'Usia 18-56 (Bekerja)', luas: 950, warna: '#1976D2', detail: 'Penduduk usia produktif yang memiliki pekerjaan.' },
+        { jenis: 'Usia 18-56 (Belum Bekerja)', luas: 250, warna: '#FFC107', detail: 'Penduduk usia produktif yang sedang mencari kerja.' },
+        { jenis: 'Usia 56+', luas: 375, warna: '#757575', detail: 'Lansia atau penduduk yang sudah tidak dalam usia produktif.' }
+    ],
+    tenagaKerjaWanita: [
+        { jenis: 'Usia 0-6', luas: 335, warna: '#FFAB91', detail: 'Anak-anak yang belum memasuki usia sekolah.' },
+        { jenis: 'Usia 7-18 (Sekolah)', luas: 375, warna: '#FF8A65', detail: 'Siswa yang sedang menempuh pendidikan formal.' },
+        { jenis: 'Usia 18-56 (Bekerja)', luas: 1050, warna: '#F4511E', detail: 'Penduduk usia produktif yang memiliki pekerjaan.' },
+        { jenis: 'Usia 18-56 (Belum Bekerja)', luas: 200, warna: '#FFA000', detail: 'Penduduk usia produktif yang sedang mencari kerja.' },
+        { jenis: 'Usia 56+', luas: 380, warna: '#9E9E9E', detail: 'Lansia atau penduduk yang sudah tidak dalam usia produktif.' }
+    ],
+    kualitasAngkatanKerjaPria: [
+        { jenis: 'Tidak Tamat SD', luas: 615, warna: '#EF5350', detail: 'Angkatan kerja pria usia 18-56 tahun yang tidak tamat SD.' },
+        { jenis: 'Tamat SD', luas: 615, warna: '#EC407A', detail: 'Angkatan kerja pria usia 18-56 tahun lulusan SD.' },
+        { jenis: 'Tamat SLTP', luas: 418, warna: '#AB47BC', detail: 'Angkatan kerja pria usia 18-56 tahun lulusan SLTP.' },
+        { jenis: 'Tamat SLTA', luas: 418, warna: '#7E57C2', detail: 'Angkatan kerja pria usia 18-56 tahun lulusan SLTA.' },
+        { jenis: 'Perguruan Tinggi', luas: 105, warna: '#5C6BC0', detail: 'Angkatan kerja pria usia 18-56 tahun lulusan Perguruan Tinggi.' }
+    ],
+    kualitasAngkatanKerjaWanita: [
+        { jenis: 'Tidak Tamat SD', luas: 515, warna: '#66BB6A', detail: 'Angkatan kerja wanita usia 18-56 tahun yang tidak tamat SD.' },
+        { jenis: 'Tamat SD', luas: 485, warna: '#9CCC65', detail: 'Angkatan kerja wanita usia 18-56 tahun lulusan SD.' },
+        { jenis: 'Tamat SLTP', luas: 312, warna: '#D4E157', detail: 'Angkatan kerja wanita usia 18-56 tahun lulusan SLTP.' },
+        { jenis: 'Tamat SLTA', luas: 312, warna: '#FFEE58', detail: 'Angkatan kerja wanita usia 18-56 tahun lulusan SLTA.' },
+        { jenis: 'Perguruan Tinggi', luas: 40, warna: '#FFCA28', detail: 'Angkatan kerja wanita usia 18-56 tahun lulusan Perguruan Tinggi.' }
+    ]
+  },
+  masalahDanPotensi: {
+    kelembagaan: [
+        { kategori: 'Lembaga Pemerintahan', data: [
+            { label: 'Jumlah aparat desa', nilai: '11 orang' },
+            { label: 'Jumlah perangkat desa', nilai: '9 orang' },
+            { label: 'Kades', nilai: 'Ada/Aktif' },
+            { label: 'Sekdes', nilai: 'Ada/Aktif' },
+            { label: 'Kaur Pemerintahan', nilai: 'Ada/Aktif' },
+            { label: 'Kaur Pembangunan/Perencanaan', nilai: 'Ada/Aktif' },
+            { label: 'Kaur Kesejahteraan', nilai: 'Ada/Aktif' },
+            { label: 'Kaur Layanan', nilai: 'Ada/Aktif' },
+            { label: 'Kaur Keuangan', nilai: 'Ada/Aktif' }
+        ]},
+        { kategori: 'BPD (Badan Permusyawaratan Desa)', data: [
+            { label: 'Keberadaan BPD', nilai: 'Aktif' },
+            { label: 'Jumlah anggota', nilai: '5 orang' }
+        ]},
+        { kategori: 'Rukun Warga (RW)', data: [
+            { label: 'Total', nilai: '12 RW' },
+            { label: 'Jumlah pengurus', nilai: '12 orang' }
+        ]},
+        { kategori: 'Rukun Tetangga (RT)', data: [
+            { label: 'Jumlah', nilai: '61 RT' },
+            { label: 'Jumlah pengurus', nilai: '61 orang' }
+        ]},
+        { kategori: 'Karang Taruna', data: [
+            { label: 'Jumlah', nilai: '1 KT' },
+            { label: 'Jumlah pengurus', nilai: '15 orang' }
+        ]},
+        { kategori: 'Lembaga Pendidikan', data: [
+            { label: 'TK', nilai: '3 Unit', status: 'Terdaftar', pemilik: '5 Swasta, 1 Desa' },
+            { label: 'SD', nilai: '4 Unit', status: 'Terakreditasi', pemilik: '4 Pemerintah' },
+            { label: 'Sekolah Islam', nilai: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
+            { label: 'Ibtidayah', nilai: '2 Unit', status: 'Terakreditasi', pemilik: '2 Swasta' },
+        ]}
+    ]
+  }
 };

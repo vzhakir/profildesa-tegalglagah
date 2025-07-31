@@ -1,0 +1,163 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 auto 50px auto;
+}
+
+/* --- Layout Grid untuk menampung dua chart --- */
+.chartGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Styles untuk seksi Donut Chart (wrapper untuk satu chart) */
+.lahanSection {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionIcon {
+  font-size: 1.8rem;
+}
+
+.lahanContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-grow: 1;
+}
+
+.lahanVisualContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1.5;
+  min-width: 250px;
+}
+
+.lahanInfoContainer {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lahanLegend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.legendItem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.legendColor {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legendText {
+  font-weight: 600;
+  color: #333;
+  flex-grow: 1;
+}
+
+.lahanDetailContainer {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lahanDetailBox {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  animation: fadeInDetail 0.3s ease;
+}
+
+@keyframes fadeInDetail {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lahanDetailBox h3 {
+  margin: 0 0 10px 0;
+  color: #4CAF50;
+  border-bottom: 1px solid #555;
+  padding-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.lahanDetailBox p {
+  margin: 0;
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.lahanDetailPlaceholder {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}

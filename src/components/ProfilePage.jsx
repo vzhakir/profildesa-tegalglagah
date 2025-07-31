@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './ProfilePage.module.css'; // Impor file CSS
-import { dataProfil } from '../data/kondisiDesaData'; // Impor data dari file
+import styles from './ProfilePage.module.css';
+// Mengimpor dataProfil dari file data terpusat
+import { dataProfil } from '../data/kondisiDesaData'; 
 
 function ProfilePage() {
   return (

@@ -10,18 +10,19 @@ function VisiMisiPage() {
       <div className={styles.section}>
         <h2 className={styles.subheading}>Visi</h2>
         <blockquote className={styles.visionStatement}>
-          "Terwujudnya Desa Tebing Tinggi yang Maju, Mandiri, Sejahtera, dan Berakhlak Mulia melalui Peningkatan Kualitas Sumber Daya Manusia dan Pemanfaatan Potensi Lokal yang Berkelanjutan."
+          Mewujudkan Brebes sebagai Kabupaten yang : “BREBES BERES” (Berkeadaban, Ekonomi Tangguh, Responsif, Edukatif, Sehat dan Sejahtera)
         </blockquote>
       </div>
 
       <div className={styles.section}>
         <h2 className={styles.subheading}>Misi</h2>
         <ol className={styles.missionList}>
-          <li>Meningkatkan kualitas penyelenggaraan pemerintahan desa yang bersih, transparan, dan akuntabel.</li>
-          <li>Mengembangkan kualitas sumber daya manusia (SDM) melalui peningkatan akses dan mutu pendidikan serta kesehatan.</li>
-          <li>Meningkatkan produktivitas perekonomian desa dengan mengoptimalkan potensi pertanian, perkebunan, dan UMKM lokal.</li>
-          <li>Membangun dan meningkatkan kualitas infrastruktur dasar desa yang merata dan berwawasan lingkungan.</li>
-          <li>Memperkuat kehidupan sosial kemasyarakatan yang rukun, agamis, dan berlandaskan pada nilai-nilai budaya luhur.</li>
+          <li>Masyarakat Brebes yang berketuhanan, taat hukum, toleran, dan berakhlakul karimah.</li>
+          <li>Mewujudkan pembangunan yang bersih, berkeadilan, berkemajuan, berkelanjutan, dan pro-investasi, dengan pembangunan yang berpihak kepada rakyat kecil.</li>
+          <li>Menekan angka pengangguran, mengurangi kemiskinan, dan memperkuat ekonomi kreatif.</li>
+          <li>Pelayanan publik yang responsif dan ramah bagi perempuan, anak-anak, lansia, dan saudara-saudara kita yang berkebutuhan khusus.</li>
+          <li>Meningkatkan kualitas sumber daya manusia yang sehat, tangguh, dan berdaya guna.</li>
+          <li>Memajukan segala potensi yang dimiliki oleh Brebes, dari sektor pertanian, perikanan, pariwisata hingga industri kreatif.</li>
         </ol>
       </div>
 

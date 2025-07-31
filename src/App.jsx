@@ -9,18 +9,14 @@ import VisiMisiPage from './components/VisiMisiPage';
 import StrukturOrganisasiPage from './components/StrukturOrganisasi';
 import DemografiPage from './components/DemografiPage';
 import PetaPage from './components/PetaPage';
-import KeadaanSosialPage from './components/KeadaanSosialPage';
-import KeadaanEkonomiPage from './components/KeadaanEkonomiPage';
-
-// 1. Impor komponen ScrollToTop yang baru dibuat
+import SosialEkonomiPage from './components/SosialEkonomiPage';
+import MasalahPotensiPage from './components/MasalahPotensiPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div>
-      {/* 2. Panggil komponen ScrollToTop di sini */}
       <ScrollToTop />
-      
       <Navbar />
       <main>
         <Routes>
@@ -36,8 +32,10 @@ function App() {
           {/* Rute Kondisi Desa */}
           <Route path="/kondisi-desa/peta" element={<PetaPage />} />
           <Route path="/kondisi-desa/demografi" element={<DemografiPage />} />
-          <Route path="/kondisi-desa/sosial" element={<KeadaanSosialPage />} />
-          <Route path="/kondisi-desa/ekonomi" element={<KeadaanEkonomiPage />} />
+          <Route path="/kondisi-desa/sosial-ekonomi" element={<SosialEkonomiPage />} />
+
+          {/* Rute Masalah dan Potensi */}
+          <Route path="/masalah-dan-potensi" element={<MasalahPotensiPage />} />
           
         </Routes>
       </main>
@@ -46,4 +44,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

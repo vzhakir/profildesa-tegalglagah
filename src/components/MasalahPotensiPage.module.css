@@ -1,0 +1,113 @@
+.pageContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 auto 50px auto;
+}
+
+.section {
+  margin-bottom: 60px;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* --- Tata Letak Kolom Baru --- */
+.columnsContainer {
+    display: grid;
+    /* Membuat 3 kolom di layar lebar, dan akan menjadi 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    /* Ratakan item ke atas */
+    align-items: start;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Jarak antar tabel dalam satu kolom */
+}
+
+.tableContainer {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTable th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.dataTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+.dataTable td:first-child {
+  font-weight: 600;
+  color: #444;
+  width: 50%;
+}
+
+.dataTable td:last-child {
+  color: #666;
+}
+
+/* --- Gaya Khusus untuk Tabel Pendidikan --- */
+.pendidikanTable .subHeader th {
+    background-color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.pendidikanTable td {
+    text-align: left;
+}

@@ -142,7 +142,7 @@ function DemografiPage() {
 
       <PageNavigator
         prevLink={{ path: '/kondisi-desa/peta', title: 'Peta dan Wilayah' }}
-        nextLink={{ path: '/kondisi-desa/sosial', title: 'Keadaan Sosial' }}
+        nextLink={{ path: '/kondisi-desa/sosial-ekonomi', title: 'Sosial & Ekonomi' }}
       />
     </div>
   );

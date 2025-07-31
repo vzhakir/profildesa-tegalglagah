@@ -1,8 +1,6 @@
-// src/components/Navbar.jsx
-
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import logoDesa from '../assets/shallots.svg'; // Asumsikan logo ini masih digunakan atau ganti jika perlu
+import logoDesa from '../assets/shallots.svg';
 
 function Navbar() {
   const getLinkClass = ({ isActive }) =>
@@ -46,8 +44,7 @@ function Navbar() {
           <ul className={styles.dropdownMenu}>
             <li><Link to="/kondisi-desa/peta">Peta dan Wilayah Desa</Link></li>
             <li><Link to="/kondisi-desa/demografi">Demografi</Link></li>
-            <li><Link to="/kondisi-desa/sosial">Keadaan Sosial</Link></li> {/* Perbarui rute di sini */}
-            <li><Link to="/kondisi-desa/ekonomi">Keadaan Ekonomi</Link></li>
+            <li><Link to="/kondisi-desa/sosial-ekonomi">Sosial & Ekonomi</Link></li> {/* Tautan Diperbarui */}
           </ul>
         </li>
 
